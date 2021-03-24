@@ -35,7 +35,7 @@ Matriz2_nos = [Id;0;0;0;-Id;Va;0;0];
 
 Tensoes = Matriz1_nos\Matriz2_nos;
 
-printf ("resitências_TAB\n");
+printf ("dados_TAB\n");
 printf ("R1 = %e kOhm \n", R1);
 printf ("R2 = %e kOhm \n", R2);
 printf ("R3 = %e kOhm \n", R3);
@@ -43,7 +43,11 @@ printf ("R4 = %e kOhm \n", R4);
 printf ("R5 = %e kOhm \n", R5);
 printf ("R6 = %e kOhm \n", R6);
 printf ("R7 = %e kOhm \n", R7);
-printf ("resistências_END\n");
+printf ("Id = %e mA \n", Id);
+printf ("Kc = %e \n", Kc);
+printf ("Kb = %e \n", Kb);
+printf ("Va = %e V \n", Va);
+printf ("dados_END\n");
 
 printf ("malhas_TAB\n");
 printf ("I1 = %e mA \n", Correntes(1));
