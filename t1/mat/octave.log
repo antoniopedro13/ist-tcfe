@@ -1,0 +1,29 @@
+dados_TAB
+R1 = 1.006765e+00 kOhm 
+R2 = 2.033032e+00 kOhm 
+R3 = 3.033913e+00 kOhm 
+R4 = 4.003128e+00 kOhm 
+R5 = 3.131011e+00 kOhm 
+R6 = 2.093899e+00 kOhm 
+R7 = 1.017744e+00 kOhm 
+Id = 1.035361e+00 mA 
+Kc = 8.170065e+00 kOhm
+Kb = 7.272764e+00 mS
+Va = 5.223200e+00 V 
+dados_END
+malhas_TAB
+I1 = 2.604926e-01 mA 
+I2 = -2.728588e-01 mA 
+I3 = 9.881466e-01 mA 
+I4 = -1.035361e+00 mA 
+malhas_END
+nos_TAB
+V0 = -0.000000e+00 V 
+V1 = 1.216927e+01 V 
+V2 = 7.480974e+00 V 
+V3 = 8.035705e+00 V 
+V4 = 8.297960e+00 V 
+V5 = 3.074760e+00 V 
+V6 = 1.005680e+00 V 
+V7 = 8.073223e+00 V 
+nos_END

@@ -44,8 +44,8 @@ printf ("R5 = %e kOhm \n", R5);
 printf ("R6 = %e kOhm \n", R6);
 printf ("R7 = %e kOhm \n", R7);
 printf ("Id = %e mA \n", Id);
-printf ("Kc = %e \n", Kc);
-printf ("Kb = %e \n", Kb);
+printf ("Kc = %e kOhm\n", Kc);
+printf ("Kb = %e mS\n", Kb);
 printf ("Va = %e V \n", Va);
 printf ("dados_END\n");
 
