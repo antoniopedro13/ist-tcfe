@@ -5,7 +5,7 @@
 \par  With the circuit solved using the mesh and node methods, it's necesssary to solve it experimentally. In order to simulate the real conditions, which we would have encountered in the laboratory, Ngspice was used. The results obtained from this simulation will take in account the energy dissipation due to the many processes that occur such as Joule effect on conductors. Using this software, we were able to verify the results obtained from the methods already described. 
 \par  In order to describe the circuit to be studied, it is necessary to follow some guidelines. Firstly, it was needed to specify , for each component, which were its positive and negative nodes. Because of that, the current directions were defined accordingly to the ones seen in the picture describing the mesh and node methods. As such, the electric resistances and current sources are going to have the positive node in the location of the current input and the negative node in the current output. The voltage sources nodes were defined so that the nodes are in accordance with the pre established nodes. In the picture below, a brief representation of the interpertation of the circuit by the ngspice programme is presented.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{Esquema_salito.PNG}
 \centering
 \caption{Circuit with voltage control source - current flow and voltage difference representation}
@@ -16,7 +16,7 @@
 
 \par \noindent Finally, a table with the values obtained is asked every time the program is run, in order to obtain the looked for data as we can see below. 
 \vspace{5mm}
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.8\textwidth} {
   | >{\raggedright\arraybackslash}X

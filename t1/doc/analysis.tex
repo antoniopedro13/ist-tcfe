@@ -5,7 +5,7 @@
 theoretically, to determine all mesh currents and nodes voltages.
 In Figure~\ref{fig:Cir_teo}, conventions that will be used doing mesh and nodes analysis are shown.
 
-\begin{figure}[ht] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.8\linewidth]{Esquema_teor.png}
 \caption{Circuit with nodes and currents convention}
 \label{fig:Cir_teo}
@@ -13,7 +13,7 @@ In Figure~\ref{fig:Cir_teo}, conventions that will be used doing mesh and nodes 
 
 \par Also, the resistance, constants of the dependent sources and current values that were given by the \emph{Python} program are shown in the following table.
 \vspace{5mm}
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.8\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -79,7 +79,7 @@ $$
 
 \par The theoretical values are shown in the table below.
 \vspace{5mm}
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.8\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -93,9 +93,9 @@ $$
 \subsection{Node analysis}
 \label{ssec:Node analysis}
 
-\par For the node analysis, we number the nodes as in Figure~\ref{fig:Cir_teo}, as said. For this method we'll work with conductance instead of resistance, because it makes it easier to work with. We now have eight variables, so we'll have to find eight equations. Since we defined ground in node zero, we get the first equation, which is $V_0=0$. The next four equations, we get from doing KCL in nodes 1, 2, 3 and 6 since they don't have voltage sources. The equations are the following
+\par For the node analysis, we number the nodes as in Figure~\ref{fig:Cir_teo}, as said. For this method we'll work with conductance instead of resistance, because it makes it easier to work with. We now have eight variables, so we'll have to find eight equations. Since we defined ground in node zero, we get the first equation, which is $V_0=0$. The next four equations, we get from doing KCL in nodes 1, 2, 3 and 6 since they don't have voltage sources. The equations are the following\\
 \vspace{5mm}
-Node 1:
+\par Node 1:
 
  \begin{equation}
   -Id + Ib - G5(V_7-V_1) = 0.
@@ -196,7 +196,7 @@ $$
 
 The theoretical values are shown in the table below.
 \vspace{5mm}
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.8\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -211,7 +211,7 @@ The theoretical values are shown in the table below.
 \par As \emph{Octave}'s output (for the mesh analyses) is just the value of the circulation current in each mesh, we're going to compute the current value in each resistor, for the sake of comparison with \emph{Ngspice}'s simulation results. We'll also compute the error associated to each current value output by \emph{Ngspice}.
 \vspace{5mm}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.8\textwidth} {
   | >{\raggedright\arraybackslash}X
