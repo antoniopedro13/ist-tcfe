@@ -14,8 +14,8 @@ R6 = 2.0938993245e03;
 R7 = 1.01774389701e03;
 Vs = 5.22319986769;
 C = 1.03536137445e-06;
-Kb = 7.2727641018e03;
-Kd = 8.17006533463e-03;
+Kb = 7.2727641018e-03;
+Kd = 8.17006533463e03;
 
 G1 = 1/R1;
 G2 = 1/R2;
@@ -96,7 +96,7 @@ printf ("dados2_END\n");
 
 %time axis: 0 to 20ms with 1us steps
 t=0:1e-6:20e-3;
-v6n = Vx*exp(-(t/Time_const));
+v6n = (Vx)*exp(-(t/Time_const));
 
 Natural = figure ();
 plot (t*1000, v6n, "g");
@@ -135,4 +135,31 @@ printf ("Amplitude8 = %e V; Fase8 = %e graus \n",Amplitude(8), Fase(8));
 printf ("phasors_END\n");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Ponto5
 
+t_neg=-5e-3:1e-6:(-1e-6);
+
+t_total = [t_neg t];
+
+n_neg = length(t_neg);
+vetor_aux = ones(1,n_neg);
+tensao6 = vetor_aux*Tensoes(6);
+vetor_Vs = vetor_aux*Vs;
+ 
+v6f = Amplitude(6)*sin(w*t+Fase(6)*(pi/180));
+v6_pos = v6n + v6f;
+v6 = [tensao6 v6_pos];
+
+vs_pos = sin(w*t);
+vs = [vetor_Vs vs_pos];
+
+Solucao_geral = figure ();
+plot (t_total*1000, v6, "g");
+hold on
+plot(t_total*1000, vs, "b");
+
+xlabel ("t[ms]");
+ylabel ("v_6(t), vs(t) [V]");
+hold off
+
+print (Solucao_geral, "General_solution", "-depsc");
