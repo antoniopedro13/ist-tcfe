@@ -1,0 +1,40 @@
+*
+*NGSPICE simulation script lab1
+*Group 1
+*
+.options savecurrents
+
+*supply voltage
+
+*input voltage source
+Vs 1 0 0
+Vx 6 8 5.930624
+R1 1 2 1.00676538952k
+R2 3 2 2.03303206695k
+R3 2 5 3.03391315228k
+R4 5 0 4.00312807132k
+R5 5 6 3.13101052342k
+R6 0 9 2.0938993245k
+R7 7 8 1.01774389701k
+Ve 9 7 0
+Gb 6 3 (2,5) 7.2727641018m
+Hc 5 8 Ve 8.17006533463k
+
+.model group 1
+
+.control
+
+op
+
+echo "**************************"
+echo "Operating point"
+echo "**************************"
+
+echo "op2_TAB"
+print all
+echo "op2_END"
+quit
+
+.endc
+
+.end
