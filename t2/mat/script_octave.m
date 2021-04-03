@@ -102,8 +102,9 @@ Natural = figure ();
 plot (t*1000, v6n, "g");
 hold on
 xlabel ("t[ms]");
-ylabel ("v_6n(t) [V]");
-hold off
+ylabel ("Voltage [V]");
+legend("v6n(t)");
+
 
 print (Natural, "Natural Solution in Node 6", "-depsc");
 
@@ -124,14 +125,14 @@ for n=1:8
 end
 
 printf ("phasors_TAB\n");
-printf ("Amplitude1 = %e V; Fase1 = %e graus \n",Amplitude(1), Fase(1));
-printf ("Amplitude2 = %e V; Fase2 = %e graus \n",Amplitude(2), Fase(2));
-printf ("Amplitude3 = %e V; Fase3 = %e graus \n",Amplitude(3), Fase(3));
-printf ("Amplitude4 = %e V; Fase4 = %e graus \n",Amplitude(4), Fase(4));
-printf ("Amplitude5 = %e V; Fase5 = %e graus \n",Amplitude(5), Fase(5));
-printf ("Amplitude6 = %e V; Fase6 = %e graus \n",Amplitude(6), Fase(6));
-printf ("Amplitude7 = %e V; Fase7 = %e graus \n",Amplitude(7), Fase(7));
-printf ("Amplitude8 = %e V; Fase8 = %e graus \n",Amplitude(8), Fase(8));
+printf ("Amplitude1 = %e V & Fase1 = %e graus \n",Amplitude(1), Fase(1));
+printf ("Amplitude2 = %e V & Fase2 = %e graus \n",Amplitude(2), Fase(2));
+printf ("Amplitude3 = %e V & Fase3 = %e graus \n",Amplitude(3), Fase(3));
+printf ("Amplitude4 = %e V & Fase4 = %e graus \n",Amplitude(4), Fase(4));
+printf ("Amplitude5 = %e V & Fase5 = %e graus \n",Amplitude(5), Fase(5));
+printf ("Amplitude6 = %e V & Fase6 = %e graus \n",Amplitude(6), Fase(6));
+printf ("Amplitude7 = %e V & Fase7 = %e graus \n",Amplitude(7), Fase(7));
+printf ("Amplitude8 = %e V & Fase8 = %e graus \n",Amplitude(8), Fase(8));
 printf ("phasors_END\n");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,7 +160,63 @@ hold on
 plot(t_total*1000, vs, "b");
 
 xlabel ("t[ms]");
-ylabel ("v_6(t), vs(t) [V]");
-hold off
+ylabel ("Voltage [V]");
+legend("v6(t)","vs(t)");
+
 
 print (Solucao_geral, "General_solution", "-depsc");
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Ponto6
+
+f = logspace(-1,6,200);
+w=f*2*pi;
+
+
+for j=1:length(f)
+	Matriz_phasors1 = [1, 0, 0, 0, 0, 0, 0, 0; -G1, G1+G2+G3, -G2, 0, -G3, 0, 0, 0; 0, -G2-Kb, G2, 0, Kb, 0, 0, 0; 0, 0, 0, 1, 0, 0, 0, 0; 0, 0, 0, Kd*G6, -1, 0, -Kd*G6, 1; 0, Kb, 0, 0, -Kb-G5, 		G5+i*w(j)*C, 0, -i*w(j)*C; 0, 0, 0, -G6, 0, 0, G6+G7, -G7; 0, -G3, 0, -G4, G3+G4+G5, -G5-i*w(j)*C, -G7, G7+i*w(j)*C];
+
+	Matriz_phasors2 = [1; 0; 0; 0; 0; 0; 0; 0];
+
+	Phasors = Matriz_phasors1\Matriz_phasors2;
+
+	v6(j) = Phasors(6);
+	vc(j) = Phasors(6)-Phasors(8);
+	vs(j) = Phasors(1)-Phasors(4); 
+	
+	ampl6(j) = 20*log10(abs(v6(j)));
+	ang6(j) = (180/pi)*arg(v6(j));
+
+	amplc(j) = 20*log10(abs(vc(j)));
+	angc(j) = (180/pi)*arg(vc(j));
+
+	ampls(j) = 20*log10(abs(vs(j)));
+	angs(j) = (180/pi)*arg(vs(j));
+end
+
+ampl_freq = figure ();
+plot (log10(f), ampl6, "g");
+hold on
+plot(log10(f), amplc, "b");
+plot(log10(f), ampls, "r");
+legend("v6","vc","vs");
+
+xlabel ("log10(f) [rad/s]");
+ylabel ("Voltage [V]");
+
+
+print (ampl_freq, "Magnitude(freq)", "-depsc");
+	
+
+ang_freq = figure ();
+plot (log10(f), ang6, "g");
+hold on
+plot(log10(f), angc, "b");
+plot(log10(f), angs, "r");
+legend("v6","vc","vs");
+
+xlabel ("log10(f) [rad/s]");
+ylabel ("Phase [graus]");
+
+
+print (ang_freq, "Phase(freq)", "-depsc");
