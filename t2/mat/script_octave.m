@@ -91,6 +91,44 @@ printf ("Req = %e Ohm \n", Req);
 printf ("tau = %e s \n", Time_const);
 printf ("dados2_END\n");
 
+question_3 = fopen("question_3.cir","w");
+
+fprintf(question_3,"R1 1 2 %e\n",R1);
+fprintf(question_3,"R2 3 2 %e\n",R2);
+fprintf(question_3,"R3 2 5 %e\n",R3);
+fprintf(question_3,"R4 5 0 %e\n",R4);
+fprintf(question_3,"R5 5 6 %e\n",R5);
+fprintf(question_3,"R6 0 9 %e\n",R6);
+fprintf(question_3,"R7 7 8 %e\n",R7);
+fprintf(question_3,"Vs 1 0 0\n");
+fprintf(question_3,"Ca 6 8 %e\n",C);
+fprintf(question_3,"Gb 6 3 (2,5) %e\n",Kb);
+fprintf(question_3,"Ve 9 7 0\n");
+fprintf(question_3,"Hc 5 8 Ve %e\n",Kd);
+
+fprintf(question_3,".op\n .IC v(6)=%e v(8)=%e",Potenciais(6),Potenciais(8));
+
+fclose(question_3);
+
+question_45 = fopen("question_45.cir","w");
+
+fprintf(question_45,"R1 1 2 %e\n",R1);
+fprintf(question_45,"R2 3 2 %e\n",R2);
+fprintf(question_45,"R3 2 5 %e\n",R3);
+fprintf(question_45,"R4 5 0 %e\n",R4);
+fprintf(question_45,"R5 5 6 %e\n",R5);
+fprintf(question_45,"R6 0 9 %e\n",R6);
+fprintf(question_45,"R7 7 8 %e\n",R7);
+fprintf(question_45,"Vs 1 0 sin(0V 1V 1k 0 0 0)\n");
+fprintf(question_45,"Ca 6 8 %e\n",C);
+fprintf(question_45,"Gb 6 3 (2,5) %e\n",Kb);
+fprintf(question_45,"Ve 9 7 0\n");
+fprintf(question_45,"Hc 5 8 Ve %e\n",Kd);
+
+fprintf(question_45,".op\n .IC v(6)=%e v(8)=%e",Potenciais(6),Potenciais(8));
+
+fclose(question_45);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Ponto3
 
