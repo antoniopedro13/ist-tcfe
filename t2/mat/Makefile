@@ -6,6 +6,6 @@ octave.log: script_octave.m
 	octave $< > $@
 	
 clean:
-	@rm -f octave.log octave-workspace *.tex *~
+	@rm -f octave.log octave-workspace *.cir *.eps *.tex *~
 
 .PHONY: clean
