@@ -1,15 +1,76 @@
-\section{Theoretical Analysis}
-\label{sec:analysis}
+\subsection{Second Point}
+\label{ssec:2T}
+
+\par Now, in the second point the objective is to find the equivalent resistor seen by the capacitor so that in the following theoretical point, we can do them more easily.
+\par To find the equivalent resistor we'll use a very used method when our circuit is complex and has dependent sources. The method is based in Thévenin theorem, so we must first turn off all independent sources and if replace the capacitor with a independent voltage source and the determine the response in the current that will flow through the voltage source, we know that this current is the same that passes through our equivalent resistor and the voltage drop will be the same as the voltage source because we're imagining a circuit containing only the voltage source and the equivalent resistor. 
+\par So, to start doing this analysis we turn off all independent sources and replace the capacitor with a voltage source, as said. This voltage source will have the value of $V_x=V(6)-V(8)$ where $V(6)$ and $V(8)$ are the voltages in node 6 and 8 found in the first point. The circuit will be as follows
+
+\begin{figure}[H] \centering
+\includegraphics[width=0.8\linewidth]{Esquema2_teo.odg}
+\caption{Circuit used in 2) to determine $R_{eq}$}
+\label{fig:Cir_2)}
+\end{figure}
+
+\par Nodal analysis will be done in this circuit where we get the following matrix. Note that in all nodes, we considered divergent currents.
+
+$$
+\begin{bmatrix}
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+-G1 & G1+G2+G3 & -G2 & 0 & -G3 & 0 & 0 & 0 \\
+0 & -G2-Kb & G2 & 0 & Kb & 0 & 0 & 0 \\
+G1+G4+G6 & -G1 & 0 & 0 & -G4 & 0 & -G6 & 0 \\
+1 & 0 & 0 & -1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & -G6 & 0 & 0 & G7+G6 & -G7 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+V_0 \\
+V_1 \\
+V_2 \\
+V_3 \\
+V_4 \\
+V_5 \\
+V_6 \\
+V_7  
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+V(6) \\
+0 \\
+V(8)  
+\end{bmatrix}
+$$
+
+\par By solving this matrix we get all node voltages and then by analysing node 6 doing KCL,
+
+\begin{equation}
+  I_{x} = Kb(V_2-V_5) - G5(V_5-V_6)
+  \label{eq:2)aux1}
+\end{equation}
+
+we get $I_x$, and now we can easily get $R_eq$ using Ohm's law,
+
+\begin{equation}
+  R_{eq} = fraq{V_x}{I_x}
+  \label{eq:2)aux2}
+\end{equation}
+
+\par There's still another part of the question, finding the time constant. Since we now have a simple RC circuit the time constant $\tau$ will be $\tau = R_{eq}C$.
+\the The following table shows all the computed results.
+
+
 
 \par In this section, the circuit shown in Figure~\ref{fig:Cir} is analysed
 theoretically, to determine all mesh currents and nodes voltages.
 In Figure~\ref{fig:Cir_teo}, conventions that will be used doing mesh and nodes analysis are shown.
 
-\begin{figure}[H] \centering
-\includegraphics[width=0.8\linewidth]{Esquema_teor.png}
-\caption{Circuit with nodes and currents convention}
-\label{fig:Cir_teo}
-\end{figure}
+
 
 \par Also, the resistance, constants of the dependent sources and current values that were given by the \emph{Python} program are shown in the following table.
 \vspace{5mm}
