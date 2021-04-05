@@ -48,6 +48,23 @@ Matriz_tensoes2 = [Vs; 0; 0; 0; 0; 0; 0; 0];
 
 Tensoes = Matriz_tensoes1\Matriz_tensoes2;
 
+I1 = (Tensoes(2)-Tensoes(1))*G1;
+Ib = (Tensoes(2)-Tensoes(5))*Kb;
+I7 = (Tensoes(7)-Tensoes(8))*G7;
+Ic = 0;
+
+printf ("correntes_TAB\n");
+printf ("I1 = %e A \n", I1);
+printf ("I2 = %e A \n", Ib);
+printf ("I3 = %e A \n", I1-Ib);
+printf ("I4 = %e A \n", I1-I7);
+printf ("I5 = %e A \n", Ib);
+printf ("I6 = %e A \n", -I7);
+printf ("I7 = %e A \n", I7);
+printf ("Is = %e A \n", I1);
+printf ("Ic = %e A \n", Ic);
+printf ("correntes_END\n");
+
 printf ("tensoes_TAB\n");
 printf ("V1 = %e V \n", Tensoes(1));
 printf ("V2 = %e V \n", Tensoes(2));
@@ -144,7 +161,7 @@ ylabel ("Voltage [V]");
 legend("v6n(t)");
 
 
-print (Natural, "Natural Solution in Node 6", "-depsc");
+print (Natural, "naturalsolution", "-depsc");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Ponto4
@@ -202,7 +219,7 @@ ylabel ("Voltage [V]");
 legend("v6(t)","vs(t)");
 
 
-print (Solucao_geral, "General_solution", "-depsc");
+print (Solucao_geral, "general_solution", "-depsc");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Ponto6
@@ -239,11 +256,11 @@ plot(log10(f), amplc, "b");
 plot(log10(f), ampls, "r");
 legend("v6","vc","vs");
 
-xlabel ("log10(f) [rad/s]");
+xlabel ("log10(f) [Hz]");
 ylabel ("Voltage [V]");
 
 
-print (ampl_freq, "Magnitude(freq)", "-depsc");
+print (ampl_freq, "magnitude(freq)", "-depsc");
 	
 
 ang_freq = figure ();
@@ -253,8 +270,8 @@ plot(log10(f), angc, "b");
 plot(log10(f), angs, "r");
 legend("v6","vc","vs");
 
-xlabel ("log10(f) [rad/s]");
+xlabel ("log10(f) [Hz]");
 ylabel ("Phase [graus]");
 
 
-print (ang_freq, "Phase(freq)", "-depsc");
+print (ang_freq, "phase(freq)", "-depsc");
