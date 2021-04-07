@@ -2,8 +2,8 @@
 \subsection{Second Point}
 \label{ssec:2T}
 
-\noindent \par Now, in the second point the objective is to find the equivalent resistor seen by the capacitor so that in the following theoretical point, we can do them more easily.
-\par To find the equivalent resistor we'll use a very used method when our circuit is complex and has dependent sources. The method is based in Thévenin theorem, so we must first turn off all independent sources and if replace the capacitor with a independent voltage source and the determine the response in the current that will flow through the voltage source, we know that this current is the same that passes through our equivalent resistor and the voltage drop will be the same as the voltage source because we're imagining a circuit containing only the voltage source and the equivalent resistor. 
+\noindent \par Now, in the second point the objective is to find the equivalent resistor seen by the capacitor, so that in the following theoretical points, we can do them more easily.
+\par To find the equivalent resistor we'll use a very used method when our circuit is complex and has dependent sources. The method is based in Thévenin's theorem, so we must first turn off all independent sources and replace the capacitor with an independent voltage source to determine the response in the current that will flow through the voltage source. We know that this current is the same that passes through our equivalent resistor and the voltage drop will be the same as the voltage source because we're imagining a circuit containing only the voltage source and the equivalent resistor. 
 \par So, to start doing this analysis we turn off all independent sources and replace the capacitor with a voltage source, as said. This voltage source will have the value of $V_x=V(6)-V(8)$ where $V(6)$ and $V(8)$ are the voltages in node 6 and 8 found in the first point. The circuit will be as follows
 
 \begin{figure}[H] \centering
@@ -75,7 +75,6 @@ we get $I_x$, and now we can easily get $R_eq$ using Ohm's law,
 \input{../mat/potenciais_tab}
 \end{tabularx}
 \end{table}
-\vspace{5mm}
 
 \vspace{5mm}
 \begin{table}[H]
@@ -108,7 +107,7 @@ applying to the natural solution of $v_6$ in our circuit, we must find out all t
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.7\linewidth]{naturalsolution.eps}
-\caption{Solução natural $v_{6n}(t)$, $t\in[0,20]$ ms}
+\caption{Natural solution $v_{6n}(t)$, $t\in[0,20]$ms}
 \label{fig:snat}
 \end{figure}
 
