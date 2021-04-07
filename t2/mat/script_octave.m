@@ -57,6 +57,23 @@ printf ("Kb = %e S \n", Kb);
 printf ("Kd = %e Ohm \n", Kd);
 printf ("dados_END\n");
 
+question_1 = fopen("question_1.cir","w");
+
+fprintf(question_1,"R1 1 2 %e\n",R1);
+fprintf(question_1,"R2 3 2 %e\n",R2);
+fprintf(question_1,"R3 2 5 %e\n",R3);
+fprintf(question_1,"R4 5 0 %e\n",R4);
+fprintf(question_1,"R5 5 6 %e\n",R5);
+fprintf(question_1,"R6 0 9 %e\n",R6);
+fprintf(question_1,"R7 7 8 %e\n",R7);
+fprintf(question_1,"Vs 1 0 %e\n", Vs);
+fprintf(question_1,"Ca 6 8 %e\n", C);
+fprintf(question_1,"Gb 6 3 (2,5) %e\n",Kb);
+fprintf(question_1,"Ve 9 7 0\n");
+fprintf(question_1,"Hc 5 8 Ve %e\n",Kd);
+
+fclose(question_1);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Ponto1
 
@@ -94,6 +111,23 @@ printf ("V6 = %e V \n", Tensoes(6));
 printf ("V7 = %e V \n", Tensoes(7));
 printf ("V8 = %e V \n", Tensoes(8));
 printf ("tensoes_END\n");
+
+question_2 = fopen("question_2.cir","w");
+
+fprintf(question_2,"R1 1 2 %e\n",R1);
+fprintf(question_2,"R2 3 2 %e\n",R2);
+fprintf(question_2,"R3 2 5 %e\n",R3);
+fprintf(question_2,"R4 5 0 %e\n",R4);
+fprintf(question_2,"R5 5 6 %e\n",R5);
+fprintf(question_2,"R6 0 9 %e\n",R6);
+fprintf(question_2,"R7 7 8 %e\n",R7);
+fprintf(question_2,"Vs 1 0 0\n");
+fprintf(question_2,"Vx 6 8 %e\n", Tensoes(6)-Tensoes(8));
+fprintf(question_2,"Gb 6 3 (2,5) %e\n",Kb);
+fprintf(question_2,"Ve 9 7 0\n");
+fprintf(question_2,"Hc 5 8 Ve %e\n",Kd);
+
+fclose(question_2);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Ponto2
