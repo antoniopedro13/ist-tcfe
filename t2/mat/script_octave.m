@@ -63,6 +63,7 @@ printf ("I6 = %e A \n", -I7);
 printf ("I7 = %e A \n", I7);
 printf ("Is = %e A \n", I1);
 printf ("Ic = %e A \n", Ic);
+printf ("Id = %e A \n", I7);
 printf ("correntes_END\n");
 
 printf ("tensoes_TAB\n");
@@ -275,3 +276,5 @@ ylabel ("Phase [graus]");
 
 
 print (ang_freq, "phase(freq)", "-depsc");
+
+
