@@ -6,7 +6,7 @@
 The scheme of the circuit we're going to analyse and the initial given data can be seen in the figure and table below.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.6\linewidth]{Desenho_intro.odg}
+\includegraphics[width=0.6\linewidth]{Desenho_intro.pdf}
 \caption{Picture of the circuit in analysis}
 \label{fig:V(t)}
 \end{figure}
@@ -17,8 +17,8 @@ The scheme of the circuit we're going to analyse and the initial given data can 
   | >{\raggedright\arraybackslash}X
   | >{\raggedleft\arraybackslash}X | }
  \hline
- \caption{Initial data given by the Python script. Units in kOhm, V, F, S and A}
-\input{../mat/phasors_tab} data.txt
+  \caption{Initial data given by the Python script. Units in kOhm, V, F, S and A}
+ \input{../mat/dados_tab}
 \end{tabularx}
 \end{table}
 
@@ -37,10 +37,10 @@ and,
   \label{eq:u(t)}
 \end{equation}
 
-\par On the first hand, in section~\ref{ssec:Analysis}, a theoretical analysis of the circuit is
+\par On the first hand, in section~\ref{sec:theoretical}, a theoretical analysis of the circuit is
 presented. Firstly, the circuit is resolver for $t<0$, then $R_eq$ is calculated by replacing the capacitor with a voltage source $V_x=V(6)-V(8)$. With it, the natural and forced responses of the circuit are calculated and then superimposed to obtain the final solution. Finally, the frequency response is also studied.
 
-\par On the other hand, in section~\ref{ssec:Simulation} we'll simulate the same circuit in order to confirm the results seen in the previous section~\ref{ssec:Analysis}. For that similar analysis are made: for $t<0$, natural and forced responses and frequencies responses.
+\par On the other hand, in section~\ref{sec:Simulation} we'll simulate the same circuit in order to confirm the results seen in the previous section~\ref{sec:theoretical}. For that similar analysis are made: for $t<0$, natural and forced responses and frequencies responses.
 
 \par Through out the report, a comparison of the results obtain in the section~\ref{sec:simulation} and the section~\ref{sec:analysis} is made, reporting the relative errors encountered. 
 
