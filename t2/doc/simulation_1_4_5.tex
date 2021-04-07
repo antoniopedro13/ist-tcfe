@@ -8,6 +8,14 @@
 
 \par Apart from this, it was also necessary to establish the values of the resistance, current and voltage associated with the resistors and independent current and voltage sources. The dependent sources, Vc and Ib (Hc and Gb in ngspice because of the symbolic representation in the program), were respectively current controlled voltage source and voltage controlled current source. Because of that, kc and kb were in kOhm and mS as the script indicated. In the case of Vc, it was needed to indicate a control voltage source, Ve which, even though it doesn't exist, is going to measure the current Ic, the control current, passing through it. This voltage control has a null potential so it doesn't interfere with the rest of the circuit. The nodes of Ve were placed in the circuit so that the current input is in the positive node of the voltage source and the output of the current is in the negative node of the source.  In the case of Ib, it was needed to introduce the nodes in which the potential difference is going to be read (again the positive node in first place and then the negative one).
 
+\par The circuit with the considered current directions can be seen in the picture below.
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.6\linewidth]{Desenho_2.odg}
+\caption{Picture of the circuit in analysis with current directions followed in the ngspice simulation}
+\label{fig:Ngspice circuit}
+\end{figure}
+
 \par For the first point, it is asked to simulate the circuit when t is less than zero. As such, $vs=Vs$ and the current is DC, which means that there is no voltage variation with time in nodes 0 and 1 and, as the other sources are linear, voltage won't varie with time in the nodes. As such, the current which passes through the capacitor is going to be null as there is no variation with the potential difference in it. Runing the simulation (not transient as all intensity and potential values are constant), we obtain a table with the values of the current and voltage in all nodes confirming what was previously said. This confirmes the values calculated through octave in the theoretical analysis. Below a table with the values obtained and the errors associated is shown.
 
 \vspace{5mm}
