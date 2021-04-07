@@ -6,8 +6,8 @@ pkg load symbolic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Erros1
 
-fp = fopen("~/ist-tcfe/t2/mat/tensoes_tab.tex","r");
-str = importdata("~/ist-tcfe/t2/mat/tensoes_tab.tex",'\t',8);
+fp = fopen("../mat/tensoes_tab.tex","r");
+str = importdata("../mat/tensoes_tab.tex",'\t',8);
 
 Tensoes1 = sscanf(char(str(1,1)),"V1 & %e V \\ hline");
 Tensoes2 = sscanf(char(str(2,1)),"V2 & %e V \\ hline");
@@ -20,8 +20,8 @@ Tensoes8 = sscanf(char(str(8,1)),"V8 & %e V \\ hline");
 
 fclose(fp);
 
-fp = fopen("~/ist-tcfe/t2/mat/correntes_tab.tex","r");
-str = importdata("~/ist-tcfe/t2/mat/correntes_tab.tex",'\t',10);
+fp = fopen("../mat/correntes_tab.tex","r");
+str = importdata("../mat/correntes_tab.tex",'\t',10);
 
 I1 = sscanf(char(str(1,1)),"I1 & %e A \\ hline");
 I2 = sscanf(char(str(2,1)),"I2 & %e A \\ hline");
@@ -36,8 +36,8 @@ Id = sscanf(char(str(10,1)),"Id & %e A \\ hline");
 
 fclose(fp);
 
-fp = fopen("~/ist-tcfe/t2/sim/op1_tab.tex","r");
-str = importdata("~/ist-tcfe/t2/sim/op1_tab.tex",'\t',17);
+fp = fopen("../sim/op1_tab.tex","r");
+str = importdata("../sim/op1_tab.tex",'\t',17);
 
 ca_i = sscanf(char(str(1,1)),"@ca[i] & %e\\ hline");
 gb_i = sscanf(char(str(2,1)),"@gb[i] & %e\\ hline");
@@ -100,8 +100,8 @@ printf ("erros1_END\n");
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Erros2
 
-fp = fopen("~/ist-tcfe/t2/mat/potenciais_tab.tex","r");
-str = importdata("~/ist-tcfe/t2/mat/potenciais_tab.tex",'\t',8);
+fp = fopen("../mat/potenciais_tab.tex","r");
+str = importdata("../mat/potenciais_tab.tex",'\t',8);
 
 Potenciais1 = sscanf(char(str(1,1)),"V1 & %e V \\ hline");
 Potenciais2 = sscanf(char(str(2,1)),"V2 & %e V \\ hline");
@@ -114,8 +114,8 @@ Potenciais8 = sscanf(char(str(8,1)),"V8 & %e V \\ hline");
 
 fclose(fp);
 
-fp = fopen("~/ist-tcfe/t2/sim/op2_tab.tex","r");
-str = importdata("~/ist-tcfe/t2/sim/op2_tab.tex",'\t',16);
+fp = fopen("../sim/op2_tab.tex","r");
+str = importdata("../sim/op2_tab.tex",'\t',16);
 
 gb_i = sscanf(char(str(1,1)),"@gb[i] & %e\\ hline");
 r1_i = sscanf(char(str(2,1)),"@r1[i] & %e\\ hline");

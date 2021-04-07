@@ -5,8 +5,8 @@ pkg load symbolic
 
 i = sqrt(-1);
 
-fp = fopen("~/ist-tcfe/t2/data.txt","r");
-str = importdata("~/ist-tcfe/t2/data.txt",'\t',14);
+fp = fopen("../data.txt","r");
+str = importdata("../data.txt",'\t',14);
 
 R1 = sscanf(char(str(4,1)),"Values: R1 = %e")*1000;
 R2 = sscanf(char(str(5,1)),"R2 = %e")*1000;

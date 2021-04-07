@@ -22,7 +22,8 @@ Ve 9 7 0
 Gb 6 3 (2,5) 7.2727641018m
 
 .model group 23
-
+.op
+.end
 .control
 
 op
@@ -34,8 +35,6 @@ echo "**************************"
 echo "op1_TAB"
 print all
 echo "op1_END"
-quit
 
 .endc
 
-.end

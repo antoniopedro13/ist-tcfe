@@ -6,6 +6,8 @@
 .include ../mat/question_45.cir
 
 .model group 23
+.op
+.end
 
 .control
 set hcopypscolor=0
@@ -29,7 +31,7 @@ echo teste_5_db_FIG
 hardcopy teste_5_p.ps ph(v(1))*180/pi ph(v(6))*180/pi
 echo teste_5_p_FIG
 
-quit
+
 .endc
 
-.end
+

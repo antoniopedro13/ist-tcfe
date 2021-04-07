@@ -1,3 +1,4 @@
+\newpage
 
 \subsection{Second Point}
 \label{ssec:2T}
@@ -6,7 +7,7 @@
 \par To find the equivalent resistor we'll use a very used method when our circuit is complex and has dependent sources. The method is based in Thévenin's theorem, so we must first turn off all independent sources and replace the capacitor with an independent voltage source to determine the response in the current that will flow through the voltage source. We know that this current is the same that passes through our equivalent resistor and the voltage drop will be the same as the voltage source because we're imagining a circuit containing only the voltage source and the equivalent resistor. 
 \par So, to start doing this analysis we turn off all independent sources and replace the capacitor with a voltage source, as said. This voltage source will have the value of $V_x=V(6)-V(8)$ where $V(6)$ and $V(8)$ are the voltages in node 6 and 8 found in the first point. The circuit will be as follows
 
-\begin{figure}[H] \centering
+\begin{figure}[h!] \centering
 \includegraphics[width=0.6\linewidth]{esquema.pdf}
 \caption{Circuit used in 2) to determine $R_{eq}$}
 \label{fig:Cir_2)}
@@ -66,7 +67,7 @@ we get $I_x$, and now we can easily get $R_eq$ using Ohm's law,
 \par The following tables shows all the computed results.
 
 \vspace{5mm}
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \begin{tabularx}{0.6\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -77,7 +78,7 @@ we get $I_x$, and now we can easily get $R_eq$ using Ohm's law,
 \end{table}
 
 \vspace{5mm}
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \begin{tabularx}{0.6\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -88,13 +89,14 @@ we get $I_x$, and now we can easily get $R_eq$ using Ohm's law,
 \end{table}
 \vspace{5mm}
 
+
 \subsection{Third Point}
 \label{ssec:3T}
 
 \noindent \par For the third point, we want to determine the natural solution of the sistem and for that we'll utilise the formula given by the professor in the theoretical classes instead of resolving the differential equation manualy. The formula is 
 
 \begin{equation}
-  v(t) = v(\inf) + [v(0) - v(\inf)]e^{-\frac{t}{\tau}}
+  v(t) = v(\infty) + [v(0) - v(\infty)]e^{-\frac{t}{\tau}}
   \label{eq:form}
 \end{equation}
 
@@ -105,12 +107,13 @@ applying to the natural solution of $v_6$ in our circuit, we must find out all t
   \label{eq:snat}
 \end{equation}
 
-\begin{figure}[h] \centering
+\begin{figure}[h!] \centering
 \includegraphics[width=0.7\linewidth]{naturalsolution.eps}
 \caption{Natural solution $v_{6n}(t)$, $t\in[0,20]$ms}
 \label{fig:snat}
 \end{figure}
 
+\newpage
 \subsection{Fourth Point}
 \label{ssec:4T}
 
@@ -168,7 +171,7 @@ $$
 
 \vspace{5mm}
 
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \begin{tabularx}{1.0\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -181,6 +184,7 @@ $$
 \end{table}
 
 \vspace{5mm}
+
 
 \subsection{Fifth Point}
 \label{ssec:5T}
@@ -201,8 +205,8 @@ where $\omega=2\pi f$ and $f=1Hz$. Now using the superposition theorem we get th
 
 where all the values are the ones specified in the previous points. The following plot shows $v_6$ and $vs$ as functions of time.
 
-\begin{figure}[H] \centering
-\includegraphics[width=0.7\linewidth]{general_solution.eps}
+\begin{figure}[h!] \centering
+\includegraphics[width=0.6\linewidth]{general_solution.eps}
 \caption{Solução total $v_{6}(t)$, $t\in[-5,20]$ ms}
 \label{fig:gensol}
 \end{figure}
@@ -210,18 +214,21 @@ where all the values are the ones specified in the previous points. The followin
 \subsection{Sixth Point}
 \label{ssec:6T}
 
-\par In this final point we want to analyse the frequency response of $vs(f)$, $vc(f)$ and in node 6 $(v_6(f))$ for a frequency range 0.1Hz to 1MHz. Note that $vc(f)$ is defined as $v_6(f)-v_8(f)$.
-\par To do this we simply apply the same method and matrix used in \ref{ssec:4T} for 200 frequency values logarithmic spaced and then again converting the phasor to amplitude and phase. Another thing o note is that for node 6 we simply use the phaser of node 6, for $vc$ we use the phasor from the previous definition and for $vs$ we use the phaser $v_1 - V_4$. Having done this, we can plot the logarithmic spaced frequency values with the amplitude and phase of each one. The following two graphs shows these functions, 
+\par In this final point we want to analyse the frequency response of the magnitude and phase of $vs(f)$, $vc(f)$ and in node 6 $(v_6(f))$ for a frequency range 0.1Hz to 1MHz. This will be a very important result to have because it gives us caracteristics of power consumptions.
+\par Normaly the plots are made in a logaritmic scale of frequency because it gives us a big density of points in areas where we want more details, also in the plot, the magnitude will be in decibels (dB) ($X_{dB}=20\log _{10}(X)$). Note that $vc(f)$ is defined as $v_6(f)-v_8(f)$.
+\par The following graphics show the resulting plots.
+\par For $vs$, we can see that the magnitude and phase are equal to zero for all the frequency values since we are considering the phasor $vs=1$, so the magnitude is one and the phase is zero, and since $\log _{10}(1)=0$, that explains the value for $vs$. On the other hand for $vc$ and $v6$, for the magnitude we see it decreasing when f increases, as expected since its a RC circuit and the capacitor impedance is $Z=\frac{1}{i \omega C}$. For the phase we see it go to negative values as expected. 
 
-\begin{figure}[h] \centering
-\includegraphics[width=0.7\linewidth]{magnitude(freq).eps}
+\begin{figure}[h!] \centering
+\includegraphics[width=0.6\linewidth]{magnitude(freq).eps}
 \caption{Magnitudes as functions of frequency, $f\in[0.1,10^6]$ Hz}
 \label{fig:mag(f)}
 \end{figure}
 
-\begin{figure}[h] \centering
+\begin{figure}[h!] \centering
 \includegraphics[width=0.6\linewidth]{phase(freq).eps}
 \caption{Phases as functions of frequency, $f\in[0.1,10^6]$ Hz}
 \label{fig:pha(f)}
 \end{figure}
+\newpage
 

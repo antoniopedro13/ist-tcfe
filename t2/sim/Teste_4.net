@@ -6,6 +6,8 @@
 .include ../mat/question_45.cir
 
 .model group 23
+.op
+.end
 
 .control
 set hcopypscolor=0
@@ -25,7 +27,6 @@ tran 1e-5 20e-3
 
 hardcopy teste_4.ps v(6) v(1)
 echo teste_4_FIG
-quit
+
 .endc
 
-.end
