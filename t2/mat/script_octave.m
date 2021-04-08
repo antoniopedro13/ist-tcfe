@@ -94,7 +94,7 @@ printf ("I2 = %e A \n", Ib);
 printf ("I3 = %e A \n", I1-Ib);
 printf ("I4 = %e A \n", I1-I7);
 printf ("I5 = %e A \n", Ib);
-printf ("I6 = %e A \n", -I7);
+printf ("I6 = %e A \n", I7);
 printf ("I7 = %e A \n", I7);
 printf ("Is = %e A \n", I1);
 printf ("Ic = %e A \n", Ic);
@@ -131,10 +131,19 @@ fclose(question_2);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Ponto2
+Vx = Tensoes(6)-Tensoes(8);
 
-Matriz_potenciais1 = [1, 0, 0, -1, 0, 0, 0, 0; -G1, G1+G2+G3, -G2, 0, -G3, 0, 0, 0;  0, -G2-Kb, G2, 0, Kb, 0, 0, 0; G1+G4+G6, -G1, 0, 0, -G4, 0, -G6, 0; 0, 0, 0, 1, 0, 0, 0, 0; 0, 0, 0, 0, 0, 1, 0, 0; 0, 0, 0, -G6, 0, 0, G6+G7, -G7; 0, 0, 0, 0, 0, 0, 0, 1];
+%Matriz_potenciais1 = [1, 0, 0, -1, 0, 0, 0, 0; -G1, G1+G2+G3, -G2, 0, -G3, 0, 0, 0;  0, -G2-Kb, G2, 0, Kb, 0, 0, 0; G1+G4+G6, -G1, 0, 0, -G4, 0, -G6, 0; 0, 0, 0, 1, 0, 0, 0, 0; 0, 0, 0, 0, 0, 1, 0, %0; 0, 0, 0, -G6, 0, 0, G6+G7, -G7; 0, 0, 0, 0, 0, 0, 0, 1];
 
-Matriz_potenciais2 = [0; 0; 0; 0; 0; Tensoes(6); 0; Tensoes(8)];
+%Matriz_potenciais2 = [0; 0; 0; 0; 0; Tensoes(6); 0; Tensoes(8)];
+
+%Potenciais = Matriz_potenciais1\Matriz_potenciais2;
+
+
+Matriz_potenciais1 = [1, 0, 0, -1, 0, 0, 0, 0; -G1, G1+G2+G3, -G2, 0, -G3, 0, 0, 0;  0, -G2-Kb, G2, 0, Kb, 0, 0, 0; 0, 0, 0, 1, 0, 0, 0, 0; 0, -G3+Kb, 0, -G4, G3+G4-Kb, 0, -G7, G7; 0, 0, 0, 0, 0, 1, 0, -1; 0, 0, 0, -G6, 0, 0, G6+G7, -G7; 0, 0, 0, Kd*G6, 1, 0, -Kd*G6, -1];
+
+
+Matriz_potenciais2 =  [0; 0; 0; 0; 0; Tensoes(6)-Tensoes(8); 0; 0];
 
 Potenciais = Matriz_potenciais1\Matriz_potenciais2;
 
@@ -149,7 +158,7 @@ printf ("V7 = %e V \n", Potenciais(7));
 printf ("V8 = %e V \n", Potenciais(8));
 printf ("potenciais_END\n");
 
-Vx = Tensoes(6)-Tensoes(8);
+
 Ix = Kb*(Potenciais(2)-Potenciais(5)) - G5*(Potenciais(5)-Potenciais(6));
 Req = Vx/Ix;
 Time_const = Req*C;

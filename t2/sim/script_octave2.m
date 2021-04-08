@@ -61,10 +61,10 @@ fclose(fp);
 
 E1 = abs(ca_i-Ic);
 E2 = abs(gb_i-I2);
-E3 = abs(r1_i-I1);
+E3 = abs(r1_i+I1);
 E4 = abs(r2_i-I2);
-E5 = abs(r3_i-I3);
-E6 = abs(r4_i-I4);
+E5 = abs(r3_i+I3);
+E6 = abs(r4_i+I4);
 E7 = abs(r5_i-I5);
 E8 = abs(r6_i-I6);
 E9 = abs(r7_i-I7);
