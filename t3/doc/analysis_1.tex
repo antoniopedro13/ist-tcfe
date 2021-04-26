@@ -1,0 +1,60 @@
+\section{Theoretical Analysis}
+\label{sec:theoretical}
+
+\noindent \par In this section, the circuit shown in the previous figure is analysed theoretically, considering the values shown in table above.
+
+\subsection{First point}
+\label{ssec:1T}
+\noindent \par In the first point, the goal is to perform node analysis for $t<0$, to determine all node voltages.
+\par In order to do this, we did KCL in each node, considering that all currents were diverging from it, which lead us to the following matrix equation
+
+\begin{equation}
+\label{eq:teo1}
+	\begin{bmatrix}
+	1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ -G1 & G1+G2+G3 & -G2 & 0 & -G3 & 0 & 0 & 0 \\ 0 & -G2-Kb & G2 & 0 & Kb & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & Kd \cdot G6 & -1 & 0 & -Kd 		\cdot G6 & 1 \\ 0 & Kb & 0 & 0 & -Kb-G5 & G5 & 0 & 0 \\ 0 & 0 & 0 & -G6 & 0 & 0 & G6+G7 & -G7 \\ 0 & -G3 & 0 & -G4-G6 & G3+G4+G5 & -G5 & G6 & 0 \\
+	\end{bmatrix}
+	\begin{bmatrix}
+	V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7 \\ V8
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	Vs \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+	\end{bmatrix}
+\end{equation}
+
+\par Solving equation \ref{eq:teo1}, we get the following result
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+ \input{../mat/tensoes_tab}
+\end{tabularx}
+\end{table}
+
+\par Knowing all node voltages, we can determine Ib, then use Ohm's law in resistors R1 and R6, and finally we can use mesh analysis to determine all branch currents.
+
+\begin{figure}[h!] \centering
+\includegraphics[width=0.6\linewidth]{Esquema1_currents_teo.pdf}
+\caption{Current directions considered to determine all branch currents}
+\label{fig:Esquema1_currents_teo}
+\end{figure}
+
+\par Considering the current directions shown in figure \ref{fig:Esquema1_currents_teo}, we get the following result
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+ \input{../mat/correntes_tab}
+\end{tabularx}
+\end{table}
+
+
+	
+
+
