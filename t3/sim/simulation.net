@@ -1,16 +1,15 @@
-* NGSPICE simulation LAB 3 GROUP 23
-* Group 23
+* NGSPICE simulation LAB 3 GROUP 21
+* Group 21
 *
 .options savecurrents
-.param n =1/11
+.param n =1/10
 *INDEPENDENT VOLTAGE SOURCE, Vs
-Vs 1 0 0 sin(0 230 50 0 0 90) 
+Vs 1 0 0 sin(0 230 50 0 0 -90) 
 
 
 *RESISTORS
-R1 4 GND 8k
-R2 4 5 63.5k
-
+R1 4 GND 98437
+R2 4 5 677410
 
 *DEPENDENT CURRENT SOURCE. 
 Ftransf 1 0 Etransf n
@@ -36,7 +35,7 @@ D5 5 6 D28
 D6 6 7 D28
 D7 7 8 D28
 D8 8 9 D28
-D9 9 10 D28 
+D9 9 10 D28
 D10 10 11 D28
 D11 11 12 D28
 D12 12 13 D28
@@ -51,12 +50,14 @@ D20 20 21 D28
 D21 21 22 D28
 D22 22 23 D28
 D23 23 24 D28
-D24 24 GND D28
+D24 24 25 D28
+D25 25 26 D28
+D26 26 GND D28
 
 
 
 *CAPACITOR. 
-C1 4 GND 0.0025
+C1 4 GND 0.0073476945
 
 *START OF THE SIMULATION
 
@@ -80,9 +81,9 @@ op
 
 
 
-echo "**"
+echo ""
 echo  "TRANSIENT ANALYSIS"
-echo "**"
+echo ""
 tran 0.0002 205m 5m
 
 echo "op1_TAB"
@@ -100,8 +101,6 @@ echo sim3_FIG
 
 hardcopy sim31.ps {v(4)-12} 
 echo sim31_FIG
-
-
 
 
 .endc
