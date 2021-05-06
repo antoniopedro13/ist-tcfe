@@ -2,51 +2,15 @@
 \label{sec:introduction}
 
 % state the learning objective 
-\noindent \par The objective of this laboratory assignment is to study a RC circuit containing 7 resistors ($R1$ to $R7$), 1 sinusoidal voltage source ($V_s$), two dependent sources (one voltage controlled current source ($G_b$) and one current controlled voltage source ($H_c$)) and a capacitor ($C_a$), by determining how the voltages varie with frequency through time. In order to do that, natural and forced responses of the nodes are going to be needed.
-The scheme of the circuit we're going to analyse and the initial given data can be seen in the figure and table below.
+\par The objective of this laboratory assignment is to design and analyse an AC/DC converter. In order to do this, we chose the envelope detector circuit, as well as the voltage regulator circuit. The architecture of our circuit can be seen in the following picture.
 
 \begin{figure}[h!] \centering
-\includegraphics[width=0.6\linewidth]{Desenho_intro.pdf}
-\caption{Picture of the circuit in analysis}
-\label{fig:V(t)}
+\includegraphics[width=0.6\linewidth]{ACDC_Esquema.pdf}
+\caption{AC/DC converter}
+\label{fig:AC/DC_Scheme}
 \end{figure}
 
-\begin{table}[h!]
-\label{tab1}
-\centering
-\begin{tabularx}{0.6 \textwidth} {
-  | >{\raggedright\arraybackslash}X
-  | >{\raggedleft\arraybackslash}X | }
- \hline
- \input{../mat/dados_tab}
-\end{tabularx}
-\caption{Initial data given by the Python script. Units in kOhm, V, F, S and A}
-\end{table}
-
-\par The sinusoidal voltage source can be defined as 
-
-\begin{equation}
-  v_s(t) = V_{s}u(-t) + sen(2\pi ft)u(t) 
-  \label{eq:vs}
-\end{equation}
-
-and,
-
-\begin{equation}
-u(t)= \begin{cases} 
-	     0, & t<0; \\ 
-	     1, & t \geq 0. \\
-      \end{cases}
-      \label{eq:teo}
-\end{equation}
-
-\par On the first hand, in section~\ref{sec:theoretical}, a theoretical analysis of the circuit is
-presented. Firstly, the circuit is resolved for $t<0$, then $R_{eq}$ is calculated by replacing the capacitor with a voltage source $V_x=V(6)-V(8)$. With it, the natural and forced responses of the circuit are calculated and then superimposed, to obtain the final solution. Finally, the frequency response is also studied.
-
-\par On the other hand, in section~\ref{sec:simulation} we'll simulate the same circuit in order to confirm the results seen in the previous section~\ref{sec:theoretical}. For that, similar analysis are made: $t<0$, natural and forced response and frequency response.
-
-\par Through out the report, a comparison of the results obtained in section~\ref{sec:simulation}, and section~\ref{sec:theoretical} is made, reporting the absolute errors. 
-
-\par  The conclusions of this study are outlined in section~\ref{sec:conclusion}.
+\par One way to get a stable DC output voltage is, in the first hand, to use a full wave rectifier - this circuit allows us to use every half-period of the input voltage. As we can see, diodes 1 and 4, as well as diodes 2 and 3 work in pairs, in order to allow us using the full lenght of the wave. In the other hand, to reduce the voltage output variations, we used a capacitor.
+\par Finally, in order to maintain the DC component in the desired value, and to minimize the AC component, we used a series of diodes (because once they get activated, their output voltage is constant, no matter what the supply voltage or current are), in series with a resistor.
 
 \newpage
