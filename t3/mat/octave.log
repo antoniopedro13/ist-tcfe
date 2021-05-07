@@ -1,0 +1,24 @@
+dados_TAB
+R1 = 9.843700e+04 Ohm 
+R2 = 6.774100e+05 Ohm 
+C = 7.347694e-03 F 
+n transformador = 1.000000e+01 
+nº diodos (voltage regulator) = 2.200000e+01 
+dados_END
+
+v0_env_dc =  22.99981981112012
+envelope_TAB
+Ripple Envelope = 3.605573e-04 V 
+Average Envelope = 2.299982e+01 V 
+envelope_END
+
+regulator_TAB
+Ripple regulator = 9.535195e-06 V 
+Average regulator = 1.200000e+01 V 
+regulator_END
+
+merito_TAB
+Cost = 8.126141e+03 MU 
+Merit = 1.168081e+01 
+merito_END
+

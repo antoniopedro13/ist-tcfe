@@ -1,0 +1,89 @@
+\section{Data comparison}
+\label{sec:comparison}
+
+\par In this section, we're going to make a comparison between the values obtained for the ripple and average voltage output values obtained when using both Octave and NGspice. Also, weŕe going to compute the figure of merit of our solution.
+\par Firstly, we're going to analyse the ripple and average voltage output of the envelope detector (v(4)).
+
+\vspace{5mm}
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.9\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{../sim/op1_tab.tex}
+\end{tabularx}
+\caption{\label{tab:Table 6} Ripple and mean value for the envelope detector obtained with NGspice (all values are in Volt)}
+\end{table}
+\vspace{5mm}
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.9\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{../mat/envelope_tab.tex}
+\end{tabularx}
+\caption{\label{tab:Table 7} Ripple and mean value for the envelope detector obtained with Octave (all values are in Volt)}
+\end{table}
+\vspace{5mm}
+
+\par By observing the table above, we can see that de values are quite different. This happens essentially because the diode is a non-linear component which has a quite complex model in NGspice, and while making the calculations using otave, we took an approximation of the behavior of this component. In addition, as said before, the value indicated as beig the ripple in NGspice, is not actually the ripple. However, the values are close enough so we can conclude that our approximation is good reasonable.
+\par Secondly, we're going to compare the ripple and average voltage output of the voltage regulator (v(5)).
+
+\vspace{5mm}
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.9\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{../sim/op2_tab.tex}
+\end{tabularx}
+\caption{\label{tab:Table 8} Ripple and mean value for the voltage regulator obtained with NGspice (all values are in Volt)}
+\end{table}
+\vspace{5mm}
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.9\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{../mat/regulator_tab.tex}
+\end{tabularx}
+\caption{\label{tab:Table 9} Ripple and mean value for the voltage regulator obtained with Octave (all values are in Volt)}
+\end{table}
+\vspace{5mm}
+
+\par As in the previous situation, this values are a little bit different. The discrepancies observed can be explained in the same way we did for the envelope detector. In a similar way, we can say that our approximation is good enough mainly because the output voltage is very close to 12V.
+\par Lastly, the figure of merit of our solution is shown for both octave and NGspice
+
+\vspace{5mm}
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.9\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{../mat/merito_tab.tex}
+\end{tabularx}
+\caption{\label{tab:Table 10} Cost and figure of merit (Octave)}
+\end{table}
+\vspace{5mm}
+
+\vspace{5mm}
+\begin{table}[h!]
+\centering
+\begin{tabularx}{0.9\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{../sim/op3_tab.tex}
+\end{tabularx}
+\caption{\label{tab:Table 11} Figure of merit (NGspice)}
+\end{table}
+\vspace{5mm}
+
+\par As said before, this formula was optimized using simulink, in order to maximize the figure of merit. The values obtained for NGspice and Octave are very different because, as explained, the value shown as ripple in NGspice is not actually the ripple.

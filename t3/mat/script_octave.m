@@ -22,6 +22,15 @@ R2 = 677410;
 
 %R2 = ((230/n)-12)/(I_s*(exp(12/(eta*Vt*k))-1));
 
+printf ("dados_TAB\n");
+printf ("R1 = %e Ohm \n", R1);
+printf ("R2 = %e Ohm \n", R2);
+printf ("C = %e F \n", C);
+printf ("n transformador = %e \n", n);
+printf ("nº diodos (voltage regulator) = %e \n", k);
+printf ("dados_END\n\n");
+
+
 for i = 1:20
   f = (Vs/n)*C*w*sin(w*t_off) - (1/R1)*(Vs/n)*cos(w*t_off) - I_s*(exp(12/(eta*Vt*k))-1);
   fl = (Vs/n)*C*(w^2)*cos(w*t_off)+(1/R1)*(Vs/n)*w*sin(w*t_off);
@@ -91,18 +100,18 @@ Merit = 1/(Cost*(ripple+abs(average) + 10^(-6)));
 
 printf ("envelope_TAB\n");
 printf ("Ripple Envelope = %e V \n", ripple_v0_env);
-printf ("Average Envelpe = %e V \n", v0_env_dc);
-printf ("envelope_END\n");
+printf ("Average Envelope = %e V \n", v0_env_dc);
+printf ("envelope_END\n\n");
 
 printf ("regulator_TAB\n");
 printf ("Ripple regulator = %e V \n", ripple);
 printf ("Average regulator = %e V \n", average_reg);
-printf ("regulator_END\n");
+printf ("regulator_END\n\n");
 
 printf ("merito_TAB\n");
 printf ("Cost = %e MU \n", Cost);
 printf ("Merit = %e \n", Merit);
-printf ("merito_END\n");
+printf ("merito_END\n\n");
 
 teorica = figure ();
 plot (t*1000, v0_env, "g");

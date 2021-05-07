@@ -103,10 +103,10 @@ hardcopy sim31.ps {v(4)-12}
 echo sim31_FIG
 
 hardcopy sim_renv.ps {v(4)} 
-echo sim31_FIG
+echo sim_renv_FIG
 
 hardcopy sim_rreg.ps {v(5)} 
-echo sim31_FIG
+echo sim_rreg_FIG
 
 echo "op3_TAB"
 print 1/(8126.1415*((maximum(v(5))-minimum(v(5)))+abs(mean(v(5)-12))+10e-6))
