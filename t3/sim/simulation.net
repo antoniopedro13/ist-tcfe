@@ -1,5 +1,5 @@
-* NGSPICE simulation LAB 3 GROUP 21
-* Group 21
+* NGSPICE simulation LAB 3 GROUP 23
+* Group 23
 *
 .options savecurrents
 .param n =1/10
@@ -102,5 +102,14 @@ echo sim3_FIG
 hardcopy sim31.ps {v(4)-12} 
 echo sim31_FIG
 
+hardcopy sim_renv.ps {v(4)} 
+echo sim31_FIG
+
+hardcopy sim_rreg.ps {v(5)} 
+echo sim31_FIG
+
+echo "op3_TAB"
+print 1/(8126.1415*((maximum(v(5))-minimum(v(5)))+abs(mean(v(5)-12))+10e-6))
+echo "op3_END"
 
 .endc
