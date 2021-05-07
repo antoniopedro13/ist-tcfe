@@ -26,7 +26,7 @@ printf ("dados_TAB\n");
 printf ("R1 = %e Ohm \n", R1);
 printf ("R2 = %e Ohm \n", R2);
 printf ("C = %e F \n", C);
-printf ("n transformador = %e \n", n);
+printf ("n transformer = %e \n", n);
 printf ("nº diodos (voltage regulator) = %e \n", k);
 printf ("dados_END\n\n");
 
