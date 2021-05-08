@@ -8,7 +8,7 @@
 \par In order to compute the output of this process, we needed to know when the capacitor starts and stops discharging ($t_{off}$ and $t_{on}$, respectively). As one might guess, and based on what has been said, $t_{off}$ corresponds to the instant in which the diodes become off ($t_{off}=\frac{1}{\omega} \cdot atan(\frac{1}{\omega R_1C})$) and if $t<t_{off}$, $v_O(env)=v_R$. On the other hand, $t_{on}$ corresponds to the instant in which the diodes become on ($t{on}$ is obtained by solving the equation $Asin(\omega t{on})=Asin(\omega t_{off}) \cdot e^{-\frac{t_{on}-t_{off}}{R_1C}}$) and if $t<t_{on}$, $v_O(env)=Asin(\omega t_{off}) \cdot e^{-\frac{t-t_{off}}{R_1C}}$. The ripple voltage is given by max($v_O$(env)-min($v_O(env)$) and it's value is shown in the table bellow, as well as the average voltage output value. As we can see, the value of the ripple voltage is very low, which is very good. 
 
 \vspace{5mm}
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.9\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -25,7 +25,7 @@
 \par Putting all this things together, we get a final output voltage $v_O=V_O+v_o$, and the average of the signal must be approximatly 12V. The values of the ripple and average output voltage for the voltage regulator can be seen in the following table. As we can see, the value of the ripple voltage is very low, which is very good. Although the average voltage output is indicated as being 12V exactly, it isn't exactly 12V, because of the approximation made by octave's output - the deviation is so small, that this value is rounded to exactly 12V.
 
 \vspace{5mm}
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.9\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -41,17 +41,17 @@
 
 \par In the following picture, the output voltage of the full-wave rectifier, output voltage of the envelope detector and output voltage of the voltage regulator are plotted. Here we have a more visual perception of the values shown in the previous tables. The ripple of the final output (blue line) is even lower than the ripple of the envelope detector's output (green line) but as this value was already very low, it is not noticeable and the output looks like a straight line (although it isn't). In the last two plots we can see by the sacale used that the ripple in both the envelope detector and the voltage regulator are in fact very small.
 
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=1\linewidth]{teoria.eps}
 \caption{Input voltage of the secondary circuit, output voltage of the envelope detector and output voltage of the voltage regulator}
 \end{figure}
 
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=1\linewidth]{ripple_env.eps}
 \caption{Ripple of the voltage output in the envelope detector}
 \end{figure}
 
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=1\linewidth]{ripple_reg.eps}
 \caption{Ripple of the voltage output in the voltage regulator}
 \end{figure}
@@ -60,7 +60,7 @@
 \par Lastly, the parameters used can be seen in the following table. The method through which we obtained this values will be explained in the next section.
 
 \vspace{5mm}
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \begin{tabularx}{0.9\textwidth} {
   | >{\raggedright\arraybackslash}X

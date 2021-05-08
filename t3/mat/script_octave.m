@@ -118,7 +118,8 @@ plot (t*1000, v0_env, "g");
 hold on
 plot(t*1000, v0_reg, "b");
 plot(t*1000,retifier, "r");
-legend("v0_{envelope} (t)","vc_{regulator} (t)","vs_{retifier} (t)");
+plot(t*1000,v0_reg - 12, "y");
+legend("v0_{envelope} (t)","vc_{regulator} (t)","vs_{retifier} (t)","vs_{regulator} (t) - 12");
 
 xlabel ("Time [ms]");
 ylabel ("Voltage");
