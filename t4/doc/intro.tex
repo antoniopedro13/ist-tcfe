@@ -1,0 +1,16 @@
+\section{Introduction}
+\label{sec:introduction}
+
+% state the learning objective 
+\par The objective of this laboratory assignment is to design and analyse an AC/DC converter. In order to do this, we chose the envelope detector circuit, as well as the voltage regulator circuit. The architecture of our circuit can be seen in the following picture.
+
+\begin{figure}[H] \centering
+\includegraphics[width=1\linewidth]{ACDC_Esquema.pdf}
+\caption{AC/DC converter}
+\label{fig:AC/DC_Scheme}
+\end{figure}
+
+\par One way to get a stable DC output voltage is, in the first hand, to use a full wave rectifier - this circuit allows us to use every half-period of the input voltage. As we can see, diodes 1 and 4, as well as diodes 2 and 3 work in pairs, in order to allow us using the full lenght of the wave. In the other hand, to reduce the voltage output variations, we used a capacitor.
+\par Finally, in order to maintain the DC component in the desired value, and to minimize the AC component, we used a series of diodes (because once they get activated, their output voltage is constant, no matter what the supply voltage or current are), in series with a resistor.
+
+\newpage
