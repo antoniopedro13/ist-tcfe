@@ -1,50 +1,112 @@
 \section{Simulation}
 \label{sec:simulation}
 
-\par In this section, we used NGspice in order to simulate the conceived AC/DC converter. In order to simplify the circuit, we had to make some changes.
-\par Firstly, the transformer was replaced by an ideal model that consists in a pair of dependent sources (a current one in the primary circuit, and a voltage one in the secondary circuit). It should be noted that the values of the parameter n (parameter of dependency of the dependent sources), the capacitance of the capacitor and the resistance of the resistor R1 were obtained running an optimization with simulink (a MATLAB application), by saying we want the biggest Merit and letting Matlab change this 3 values, with some constrains to make sure that a 12V DC voltage was obtained. Initially our otimization was run with the ability to change R2, but we had to deny that ability since MATLAB was giving us values that were violating KVL for the loop of the voltage regulator. To surpass this problem we only gave the ability for MATLAB to change the values previously said and we had to calculate $R2 = \frac{\frac{230}{n}-12}{I_s(e^{\frac{12}{\eta V_tk}}-1)}$, since we were assuming 12V in the diodes and 230/10 V in the envelope detector. By using this method, the optimization allowed us to know the values we had to use. Despite this, when the values obtained where used in NGspice, the output voltage of the entire circuit was something about 12,3V, so we had to change the value of R2 through trial and error, in order to lower this value to the desired 12V. This correction only had to be done in the DC value, because the ripple value was already pretty good. In the octave script the equation for the R2 is commented for the reader to see, and after this last correction in NGspice, R2 is defined with the value obtained.
-\par In the tables below, the values of the ripple and the mean value of the voltage output for the envelope detector and the voltage regulator are shown.
+\par In this section, a briet description of the circuit modeled through NGspice is going to be presented and the values obtained on it are going to be compared with the ones obtained on octave. The purpose of the simulation was to maximise the merit obtained and, as such, to obtain the values of the gain, bandwidth and the lower and higher  cut off frequencies as well as the input and output impedances.
 
-\vspace{5mm}
-\begin{table}[H]
-\centering
-\begin{tabularx}{0.9\textwidth} {
-  | >{\raggedright\arraybackslash}X
-  | >{\raggedleft\arraybackslash}X | }
- \hline
-\input{../sim/op1_tab.tex}
-\end{tabularx}
-\caption{\label{tab:Table 4} Ripple and mean value for the envelope detector (all values are in Volt)}
+\par In order to do that, the circuit in study was modelled in the program. For that, transistors of the given models (NPN transistor for the gain stage and PNP transistor for the output stage) were used on the two common amplifiers and the rest of the components specifications changed to be on par with the values optimised through the matlab software and as seen in the octave sript.
+
+\par With the circuit described, the next step was to analyse the simulations with the introduced values. The first step was to verify if the transistors were functioning in the foward active region, F.A.R mode. To do that the potential difference between the collector and the emitter and the base, for the NPN transistor, were calculated and, for the PNP transistor, the potential difference between the emitter and the collector and the base were calculated. In order to guarantee the previous condition it is necessary to guarantee the following conditions: $V_{CE}>V_{BE}$ and $V_{EC}>V_{EB}$. The results obtained are now presented:
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/NPN_table}
+     \end{tabular}
+  \caption{Confirmation of NPN in FAR mode}
+ 
 \end{table}
-\vspace{5mm}
 
-\begin{table}[H]
-\centering
-\begin{tabularx}{0.9\textwidth} {
-  | >{\raggedright\arraybackslash}X
-  | >{\raggedleft\arraybackslash}X | }
- \hline
-\input{../sim/op2_tab.tex}
-\end{tabularx}
-\caption{\label{tab:Table 5} Ripple and mean value for the voltage regulator (all values are in Volt)}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/PNP_table}
+     \end{tabular}
+  \caption{Confirmation of NPN in FAR mode}
+    
 \end{table}
-\vspace{5mm}
 
-\par Considering this values, we have to mention that, in our case, the value indicated for the ripple in both cases is not actually the ripple. This happens because NGspice can't calculate the ripple in any other way that isn't maximum(v(x))-minimum(v(x)). As such, because our ripple is really small, the voltage decrease due to energy dissipation has a greater impact on the output than the ripple itself, and the value indicated for the ripple in both tables is actually the initial value minus the last value of the voltage output. This effect is more noticeable in the plots bellow.
-\par In the following pictures, the first one shows the plots for the input of the secondary circuit of the transformer (v(2)-v(3)), the output voltage of the envelope detector (v(4)), the output voltage of the voltage regulator (v(5)), and the value of v(5)-12 (in order to show that it is a line close to zero - not completely straight because of the diodes, that are not linear components). Here we can see that the envelope detector does, in fact, decrease the ripple value, and the voltage regulator keeps the output voltage approximately constant. In the last two plots, we have a more detailed prespective of the output, of both the envelope detector and the voltage regulator, and the effect explained before is well noticeable - if we look carefully, we can identify a small ripple but, as said, the decrease of the voltage output due to energy losses has a stronger effect that the ripple itself.
+\par The rest of the values in study (gain, lower and higher cutoff frequencies and bandwidth),  are presented in the following table. These were obtained using the fuction $meas$ as seen in the NGspice script, taking into account that the gain is the maximum of the voltage output, the cutoff frequencies are the frequencies for which the output voltage is 3db less than the gain (as per definition) and the bandwidth is the difference between those frequencies.
 
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/results_tab}
+    \end{tabular}
+  \caption{Gain, cutoff frequencies and bandwidth values}
+    \label{tab:results}
+\end{table}
 
-\begin{figure}[H] \centering
-\includegraphics[width=0.7\linewidth]{sim3.pdf}
-\caption{Input voltage of the secondary circuit (v(2)-v(3)), output voltages of the envelope detector (v(4)) and voltage regulator (v(5)), and v(5)-12}
+\par Next, it is important to understand the purpose of certain elements of the circuit: the coupling capacitors; bypass capacitor and the resistor R_C 
+
+\subsection{Effect of the Coupling Capacitors}
+
+\par The coupling capacitors associated to the respective transistors have the primary function of blocking the DC signal. In fact, taking into account the impedance of a capacitor, when $\omega=0$, $Z_C=\inf$ and the circuit is opened. This is necessary because of the main purpose of an amplifier: amplify the input AC signal. As seen on the classes, through the expression of the lower cutoff frequencie, the higher the capacitances, the larger the bandwidth is going to be. As for the higher cutoff frequencie little effects are going to be felt with the change of capacitance as shown in the formulae presented by the professor. However, only this tension would imply that the transitor wasn't always in the FAR. As such, an aditional DC independent voltage source is used in order to force it to be always in the required Far. This DC component is eventually eliminated when the current reaches the other capacitor. All of this helps maintaing the operating point of the transistor, allowing it to operate at lower frequencies.
+
+\subsection{Effect of the Bypass Capacitors}
+
+\par As seen in the lectures, the resistor $R_E$ has the function of lessening the effect of the temperaturre in the DC voltage. However by adding a resistor, the gain will lower. In order to negate this, a capacitor is added in parallel to the resistance. With this, the DC current will be affected by the resistor whilst the AC current passes through the capacitor because of its medium - high frequencie (and as such the impedance of the capacitor is small - short circuit).
+
+\subsection{Effect of the Resistor R_C}
+
+\par Finally, the effect of $R_C$ on the circuit gain is important to be studied. As the gain is proportional to the value of $R_C$, the higher $R_C$ is, the higher the gain will be and thus the merit. 
+
+\par All of the effects mentioned above can be seen through the graphics below, where it is possible to see the bandwidth, the gain and the lower and higher cutoff frequencies.
+
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.75\linewidth]{vo1f.pdf}
+  \caption{Input Voltage}
+  \label{fig:sim4}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.75\linewidth]{vo2f.pdf}
+  \caption{Output voltage}
+  \label{fig:sim5}
+\end{subfigure}
 \end{figure}
 
-\begin{figure}[H] \centering
-\includegraphics[width=0.7\linewidth]{sim_renv.pdf}
-\caption{Output voltage of the envelope detector}
-\end{figure}
 
-\begin{figure}[H] \centering
-\includegraphics[width=0.7\linewidth]{sim_rreg.pdf}
-\caption{Output voltage of the voltage regulator}
-\end{figure}
+\par Next, the input and output impedances were calculated as seen on the tables below,
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/Zin_tab}
+   \end{tabular}
+  \caption{Input impedance ($\Omega$)}
+    \label{tab:ZI}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/op_ZO_tab}
+   \end{tabular}
+  \caption{Output impedance ($\Omega$)}
+  
+  \label{tab:ZO}
+\end{table}
+
+\par As we can see, the input impedance is higher than the outup impedance. This plays well to maximise the gain as the voltage in node in2 needs to be as close to Vin as possible, reducing the losses. To do that, as we can see in the voltage divider formulae, it's necessary to increase the resistance value. The opposite logic is used to the output impedance. Again, considering the voltage divider formulae, the output impedance must be as small as possible to guarantee the maximum output voltage and gain. Even though the output impedance should be lower than the $8\Omega$ to maximise the output voltage, because of the different parameters in the merit formula, our otimization made the value higher than the optimal value if it was the only one. 
+
+\par Finally the cost and merit of the circuit described and seen in the images before  is calculated in ngspice. The results are shown on the table as it follows.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/cost_tab}
+   \end{tabular}
+  \caption{Cost and Merit of the circuit}
+  \label{tab:cost}
+\end{table}
+

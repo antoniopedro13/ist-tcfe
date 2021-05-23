@@ -21,7 +21,6 @@ print all
 op
 
 
-echo "**************"
 echo "NPN_TABLE"
 let Vce=v(coll)-v(emit)
 echo "Vce = $&Vce"
@@ -43,16 +42,16 @@ echo "Vec = $&Vec"
 let Veb=v(emit2)-v(coll)
 echo "Veb = $&Veb"
 if (Vec>Veb)
-echo "Vec greater than Veb = Correct F.A.R"
+echo "Correct F.A.R"
 else
-echo "Vec greater than Veb = Wrong F.A.R"
+echo "Wrong F.A.R"
 endif
 echo "PNP_END"
 
 
-echo  "op_TAB"
+echo  "op_TABLE"
 print all
-echo  "op_END"
+
 
 
 ac dec 10 10 100MEG
