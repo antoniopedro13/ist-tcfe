@@ -96,9 +96,9 @@ Merit = (abs(AV_DB) * (fH-fL))/(cost * fL);
 %Ponto 3 Teorica
 printf ("ponto1_TAB\n");
 printf ("VCE = %e V\n", VCE);
-printf ("VBE = %e V \n", VBEON);
+printf ("VBEON = %e V \n", VBEON);
 printf ("VEC = %e V\n", VO2);
-printf ("VEB = %e V \n", VEBON);
+printf ("VEBON = %e V \n", VEBON);
 printf ("IB1 = %e A \n", IB1);
 printf ("IC1 = %e A \n", IC1);
 printf ("IE1 = %e A \n", IE1);
@@ -130,7 +130,8 @@ printf ("Merit = %e \n", Merit);
 printf ("HighCutOff frequency = %e Hz\n", fH);
 printf ("LowCutOff frequency = %e Hz\n", fL);
 printf ("Cost = %e MU's\n", cost);
-printf ("Bandwidth = %e rad/s\n", fH-fL);
+printf ("Bandwidth = %e Hz\n", fH-fL);
+printf ("Max Gain = %e V\n", max(Tdb));
 printf ("ponto5_END\n\n");
 
 %Ponto 3 Teorica
