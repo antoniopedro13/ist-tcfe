@@ -192,6 +192,8 @@ fprintf(file1, "Rout emit2 vcc %e\n\n", RE2);
 fprintf(file1,"*output coupling capacitor\n");
 fprintf(file1, "Co emit2 out %e\n\n", C3);
 fprintf(file1,"*fonte de teste\n");
+
+%ojoaoegay
 fprintf(file1, "VL out 0 ac 1.0 sin(0 10m 1k)\n\n");
 fprintf(file1, ".END\n\n");
 fclose(file1);
