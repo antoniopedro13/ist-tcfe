@@ -1,11 +1,9 @@
-all: octave_1.log
-	$(eval NGSTABS=$(shell grep _TAB $< | sed 's/_TAB//g' | sed ':a;N;$!ba;s/\n/ /g'))
-	$(foreach i, $(NGSTABS), sed -n '/^$i_TAB/,/^$i_END/{p;/^$i_END/q}' $< | grep -v $i_TAB | grep -v $i_END | grep -v '#' | sed 's/\=/\&/g' | sed 's/$$/\\\\ \\hline/g' > $i_tab.tex;)
-	
-octave_1.log: t4.m
-	octave $< > $@
-		
-clean:
-	@rm -f octave_1.log octave-workspace *.cir *.eps *.tex *~
+all: 
+	make -C mat
+	make -C sim
 
-.PHONY: clean
+clean:
+	make -C mat clean
+	make -C sim clean
+
+.PHONY: all clean
