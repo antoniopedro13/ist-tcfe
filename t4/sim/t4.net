@@ -75,10 +75,11 @@ meas AC lower WHEN vdb(out) = range RISE =1
 meas AC upper WHEN vdb(out) = range CROSS=LAST
 
 let bandwidth = upper-lower
-let gain = max
+let gain = abs(v(out)[40]/v(in)[40])
 let Cut_Out_Freq= lower
 let High_Freq = upper
 let quality = bandwidth*gain/Cut_Out_Freq
+let gaindB = max
 
 
 
@@ -92,7 +93,7 @@ echo "Zin_END"
 
 
 echo "results_TAB"
-echo "V Gain=$&gain"
+echo "V Gain=$&gaindB dB"
 echo "Bandwidth=$&bandwidth Hz"
 echo "Lower Cut Off Freq= $&Cut_Out_Freq Hz"
 echo "Higher Cut Off Freq= $&High_Freq Hz"
@@ -118,7 +119,7 @@ echo "cost1_END"
 
 
 echo "cost_TAB"
-echo "V Gain=$&gain"
+echo "V Gain=$&gaindB dB"
 echo "Low Cut Off Freq= $&Cut_Out_Freq Hz"
 echo "High Cut Off Freq= $&High_Freq Hz"
 echo "Bandwidth=$&bandwidth Hz"

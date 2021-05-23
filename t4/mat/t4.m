@@ -91,7 +91,7 @@ end
 
 %Merit and cost calculations
 cost = 1e-3*(RE1 + RC1 + RB1 + RB2 + RE2) + 1e6*(C1 + C2 + C3) + 2*0.1;
-Merit = (abs(AV_DB) * (fH-fL))/(cost * fL);
+Merit = (abs(AV) * (fH-fL))/(cost * fL);
 
 %Ponto 3 Teorica
 printf ("ponto1_TAB\n");
