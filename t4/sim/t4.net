@@ -59,11 +59,13 @@ ac dec 10 10 100MEG
 *plot vdb(coll)
 *plot vp(coll)
 *plot vdb(in)
-hardcopy vo1f.ps vdb(coll) 
+hardcopy vo1f.ps {vdb(coll)}
+echo vo1f_FIG 
 
 *plot vdb(out)
 *plot vp(out)
-hardcopy vo2f.ps vdb(out)
+hardcopy vo2f.ps {vdb(out)}
+echo vo2f_FIG 
 
 
 meas AC max MAX vdb(out) from=10 to=100MEG
@@ -76,21 +78,21 @@ meas AC upper WHEN vdb(out) = range CROSS=LAST
 
 let bandwidth = upper-lower
 let gain = max
-let Cut_Out_Freq= lower
-let quality = bandwidth*gain/Cut_Out_Freq
+let CutOutFreq= lower
+let quality = bandwidth*gain/CutOutFreq
 
 
 echo "Zin_TAB"
-let Zr_in= Re(v(in2)[40]/i(Vin)[40])
-let Zim_in= Im(v(in2)[40]/i(Vin)[40])
-echo "Zin = $&Zr_in + $&Zim_in j"
+let Zrin= Re(v(in2)[40]/i(Vin)[40])
+let Zimin= Im(v(in2)[40]/i(Vin)[40])
+echo "Zin = $&Zrin + $&Zimin j"
 echo "Zin_END"
 
 
 echo "results_TAB"
 echo "VGain = $&gain"
 echo "Bandwidth = $&bandwidth"
-echo "Lower Cutoff Freq = $&Cut_Out_Freq"
+echo "LowerCutoffFreq = $&CutOutFreq"
 echo "results_END"
 
 *total_r = (Rin+R1+R2+Rc+Re+Rout+RL)/1000

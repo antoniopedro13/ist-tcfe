@@ -22,10 +22,10 @@ let INT= abs(Zo[40])
 
 
 
-echo "op_ZO_TAB"
+echo "opZO_TAB"
 echo "Zo = $&REAL + $&Im j"
 echo "Zo(int) = $&INT"
-echo "op_ZO_END"
+echo "opZO_END"
 
 
 
