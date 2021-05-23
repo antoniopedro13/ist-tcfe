@@ -18,13 +18,13 @@ Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 No. of Data Rows : 1
 NPN_TAB
-Vce = 4.92668
-Vbe = 0.654762
+Vce = 4.92668 V
+Vbe = 0.654762 V
 Correct F.A.R
 NPN_END
 PNP_TAB
-Vec = 5.77796
-Veb = 0.70695
+Vec = 5.77796 V
+Veb = 0.70695 V
 Correct F.A.R
 PNP_END
 op_TAB
@@ -59,9 +59,9 @@ Zin = -1445.61 + 303.661 j
 Zin_END
 results_TAB
 V Gain=34.1403
-Bandwidth=1.22339E+06
-Lower Cut Off Freq= 15.8089
-Higher Cut Off Freq= 1.22341E+06
+Bandwidth=1.22339E+06 Hz
+Lower Cut Off Freq= 15.8089 Hz
+Higher Cut Off Freq= 1.22341E+06 Hz
 results_END
 cost1_TAB
 Cost = 2198.94
@@ -69,10 +69,10 @@ merit = 1201.48
 cost1_END
 cost_TAB
 V Gain=34.1403
-Low Cut Off Freq= 15.8089
-High Cut Off Freq= 1.22341E+06
-Bandwidth=1.22339E+06
-Cost = 2198.94
+Low Cut Off Freq= 15.8089 Hz
+High Cut Off Freq= 1.22341E+06 Hz
+Bandwidth=1.22339E+06 Hz
+Cost = 2198.94 MU
 merit = 1201.48
 cost_END
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
@@ -339,14 +339,14 @@ capacitance            0.00064997            0.00075007            0.00075007
 
 Total analysis time (seconds) = 0.001
 
-Total elapsed time (seconds) = 0.007 
+Total elapsed time (seconds) = 0.021 
 
 Total DRAM available = 7961.879 MB.
-DRAM currently available = 5304.863 MB.
-Total ngspice program size =   21.996 MB.
-Resident set size =   10.141 MB.
-Shared ngspice pages =    8.246 MB.
+DRAM currently available = 5207.711 MB.
+Total ngspice program size =   22.113 MB.
+Resident set size =    9.961 MB.
+Shared ngspice pages =    8.070 MB.
 Text (code) pages =    5.070 MB.
 Stack = 0 bytes.
-Library pages =    2.254 MB.
+Library pages =    2.371 MB.
 

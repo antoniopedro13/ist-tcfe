@@ -197,3 +197,14 @@ fprintf(file1,"*fonte de teste\n");
 fprintf(file1, "VL out 0 ac 1.0 sin(0 10m 1k)\n\n");
 fprintf(file1, ".END\n\n");
 fclose(file1);
+
+printf ("ponto0_TAB\n");
+printf ("VColl = %e \n", VO1);
+printf ("VBase = %e \n", VEQ);
+printf ("VEmit = %e \n", VE1);
+printf ("VCE = %e V\n", VCE);
+printf ("VBEON = %e V \n", VBEON);
+printf ("VEC = %e V\n", VO2);
+printf ("VEBON = %e V \n", VEBON);
+printf ("ponto0_END\n\n");
+

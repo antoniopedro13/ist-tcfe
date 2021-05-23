@@ -34,3 +34,13 @@ Bandwidth = 4.377865e+05 Hz
 Max Gain = 3.111556e+01 V
 ponto5_END
 
+ponto0_TAB
+VColl = 6.804614e+00 
+VBase = 8.204070e-01 
+VEmit = 1.045049e-01 
+VCE = 6.700109e+00 V
+VBEON = 7.000000e-01 V 
+VEC = 7.504614e+00 V
+VEBON = 7.000000e-01 V 
+ponto0_END
+

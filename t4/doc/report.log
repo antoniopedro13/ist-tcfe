@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.15)  23 MAY 2021 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.15)  23 MAY 2021 19:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -687,7 +687,20 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@zref@counter=\count327
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-(./report.aux)
+(./report.aux
+
+LaTeX Warning: Label `fig:sim4' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sim4' multiply defined.
+
+
+LaTeX Warning: Label `fig:sim5' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sim5' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
@@ -802,7 +815,7 @@ LaTeX Info: Redefining \nameref on input line 85.
  (./frontcover.tex
 Package pdftex.def Info: Option `bb' equivalent to `viewport' with pdftex drive
 r on input line 15.
-<../../figlib/IST_A_CMYK_POS.pdf, id=48, 845.0471pt x 597.51233pt>
+<../../figlib/IST_A_CMYK_POS.pdf, id=56, 845.0471pt x 597.51233pt>
 File: ../../figlib/IST_A_CMYK_POS.pdf Graphic file (type pdf)
 <use ../../figlib/IST_A_CMYK_POS.pdf>
 Package pdftex.def Info: ../../figlib/IST_A_CMYK_POS.pdf  used on input line 15
@@ -836,7 +849,7 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../../figlib/IST_A_CMYK_PO
 S.pdf>] (./intro.tex
-<lab4.pdf, id=87, 722.7pt x 542.025pt>
+<lab4.pdf, id=97, 722.7pt x 542.025pt>
 File: lab4.pdf Graphic file (type pdf)
 <use lab4.pdf>
 Package pdftex.def Info: lab4.pdf  used on input line 7.
@@ -846,7 +859,7 @@ Package pdftex.def Info: lab4.pdf  used on input line 7.
 LaTeX Warning: Reference `fig:2' on page 3 undefined on input line 11.
 
 (../mat/ponto1_tab.tex) (../mat/ponto1_tab.tex) (../mat/ponto1_tab.tex)
-Overfull \hbox (6.82967pt too wide) in paragraph at lines 35--36
+Overfull \hbox (6.82967pt too wide) in paragraph at lines 30--31
 \OT1/phv/m/n/10.95 The sec-ond point in this anal-y-sis con-sists in com-put-in
 g the gain and in-put and out-put impedances
  []
@@ -855,24 +868,24 @@ g the gain and in-put and out-put impedances
 (../mat/ponto3_tab.tex) (../mat/ponto3_tab.tex) (../mat/ponto3_tab.tex)
 (../mat/ponto4_tab.tex) (../mat/ponto4_tab.tex) (../mat/ponto4_tab.tex)
 Package epstopdf Info: Source file: <teoria.eps>
-(epstopdf)                    date: 2021-05-23 17:37:39
+(epstopdf)                    date: 2021-05-23 19:42:05
 (epstopdf)                    size: 9497 bytes
 (epstopdf)             Output file: <teoria-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-05-23 17:37:41
+(epstopdf)                    date: 2021-05-23 19:42:07
 (epstopdf)                    size: 7113 bytes
 (epstopdf)             Command: <repstopdf --outfile=teoria-eps-converted-to.pd
 f teoria.eps>
-(epstopdf)             \includegraphics on input line 108.
+(epstopdf)             \includegraphics on input line 98.
 Package epstopdf Info: Output file is already uptodate.
-<teoria-eps-converted-to.pdf, id=111, 578.16pt x 433.62pt>
+<teoria-eps-converted-to.pdf, id=121, 578.16pt x 433.62pt>
 File: teoria-eps-converted-to.pdf Graphic file (type pdf)
 <use teoria-eps-converted-to.pdf>
-Package pdftex.def Info: teoria-eps-converted-to.pdf  used on input line 108.
+Package pdftex.def Info: teoria-eps-converted-to.pdf  used on input line 98.
 (pdftex.def)             Requested size: 455.24411pt x 341.43124pt.
 
 [4] (../mat/ponto5_tab.tex) (../mat/ponto5_tab.tex) (../mat/ponto5_tab.tex))
 [5 <./teoria-eps-converted-to.pdf>] (./simulation.tex (../sim/NPN_tab.tex)
-(../sim/PNP_tab.tex) (../sim/op_tab.tex) (../sim/results_tab.tex) [6]
+(../sim/PNP_tab.tex) (../sim/op_tab.tex) [6] (../sim/results_tab.tex)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 66.
@@ -885,41 +898,70 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 66.
 
-<vo1f.pdf, id=142, 597.23125pt x 845.1575pt>
+[7]
+<vo1f.pdf, id=160, 597.23125pt x 845.1575pt>
 File: vo1f.pdf Graphic file (type pdf)
 <use vo1f.pdf>
-Package pdftex.def Info: vo1f.pdf  used on input line 76.
+Package pdftex.def Info: vo1f.pdf  used on input line 78.
 (pdftex.def)             Requested size: 170.71654pt x 241.58167pt.
-<vo2f.pdf, id=143, 597.23125pt x 845.1575pt>
+<vo2f.pdf, id=161, 597.23125pt x 845.1575pt>
 File: vo2f.pdf Graphic file (type pdf)
 <use vo2f.pdf>
-Package pdftex.def Info: vo2f.pdf  used on input line 82.
+Package pdftex.def Info: vo2f.pdf  used on input line 84.
 (pdftex.def)             Requested size: 170.71654pt x 241.58167pt.
-(../sim/Zin_tab.tex) (../sim/opZO_tab.tex) [7] (../sim/cost_tab.tex)) [8 <./vo1
-f.pdf> <./vo2f.pdf>] (./comparison.tex) [9] (./conclusion.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
+ (../sim/Zin_tab.tex) (../sim/opZO_tab.tex) (../sim/cost_tab.tex)
+Underfull \vbox (badness 2229) has occurred while \output is active []
 
-(./report.aux)
+ [8 <./vo1f.pdf> <./vo2f.pdf>] [9]) (./comparison.tex
+Package epstopdf Info: Source file: <teoria.eps>
+(epstopdf)                    date: 2021-05-23 19:42:05
+(epstopdf)                    size: 9497 bytes
+(epstopdf)             Output file: <teoria-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-05-23 19:42:07
+(epstopdf)                    size: 7113 bytes
+(epstopdf)             Command: <repstopdf --outfile=teoria-eps-converted-to.pd
+f teoria.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+File: teoria-eps-converted-to.pdf Graphic file (type pdf)
+<use teoria-eps-converted-to.pdf>
+Package pdftex.def Info: teoria-eps-converted-to.pdf  used on input line 11.
+(pdftex.def)             Requested size: 170.71654pt x 128.03589pt.
+File: vo2f.pdf Graphic file (type pdf)
+<use vo2f.pdf>
+Package pdftex.def Info: vo2f.pdf  used on input line 17.
+(pdftex.def)             Requested size: 170.71654pt x 241.58167pt.
+ (../sim/op_tab.tex)
+(../mat/ponto0_tab.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+[11]) (./conclusion.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
+ (./report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: A54AE858088CF6CB6637BCE9E4DE18C8;690.
+(rerunfilecheck)             Checksum: 6AC1C1E32B492230CEABB524046C99FD;839.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 18809 strings out of 481239
- 318597 string characters out of 5920377
- 710753 words of memory out of 5000000
- 33650 multiletter control sequences out of 15000+600000
+ 18824 strings out of 481239
+ 318817 string characters out of 5920377
+ 710885 words of memory out of 5000000
+ 33653 multiletter control sequences out of 15000+600000
  558398 words of font info for 60 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 41i,10n,79p,1073b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,86p,1073b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
@@ -930,10 +972,10 @@ msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on report.pdf (10 pages, 319130 bytes).
+Output written on report.pdf (12 pages, 318623 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 130 words of extra memory for PDF output out of 10000 (max. 10000000)
 

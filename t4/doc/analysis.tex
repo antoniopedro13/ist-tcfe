@@ -10,11 +10,6 @@
 \par Our theoretical analysis starts by computing the operating point, using the theoretical DC model studied. In order to do this, we harnessed the mesh method provided in the Octave script to which we added the new components.
 \par The current directions used are shown in figure \ref{fig:2}, and their values are presented in table \ref{tab:currents}, as well as the values of $V_{CE}$ and $V_{BE}$, and $V_{EC}$ and $V_{EB}$, respectively for the NPN and the PNP transistors, in order to prove that they're working in the forward active region ($V_{CE} > V_{BEON}$ and $V_{EC} > V_{EBON}$).
 
-%\begin{figure}[H] \centering
-%	\includegraphics[width=1\linewidth]{ACDC_Esquema.pdf}
-%	\caption{Circulation current directions - mesh method}
-%	\label{fig:2}
-%\end{figure}
 
 \vspace{5mm}
 \begin{table}[H]
@@ -35,11 +30,6 @@
 \par The second point in this analysis consists in computing the gain and input and output impedances separately for each stage.
 \par In order to do this kind of analysis we have to consider the incremental model of the circuit.
 
-%\begin{figure}[H] \centering
-%	\includegraphics[width=1\linewidth]{ACDC_Esquema.pdf}
-%	\caption{Incremental model of the circuit}
-%	\label{fig:3}
-%\end{figure}
 
 \par In order to compute the gain of each stage, we used the formulae which were taught in the theoretical classes (which were also given in advance in Octave's script). We can use this simplified formulae, because we are assuming medium/high frequencies. Based on this assumption, we can replace the capacitor with a short circuit.
 \par In a similar way, we computed the input and output impedances, using the formulae given in the theoretical classes (which were also given in advance in Octave's script), which are based on the same assumption.
