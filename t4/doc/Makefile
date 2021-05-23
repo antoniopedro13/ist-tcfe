@@ -20,3 +20,9 @@ clean:
 	@rm -rf *.log *.lot *.nlo *.nls *.out *.toc *~ *.*% ./*.pdf ./*.eps ./*.ps
 	
 .PHONY: all clean
+
+
+
+
+
+

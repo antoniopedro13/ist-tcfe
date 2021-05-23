@@ -23,3 +23,8 @@ clean:
 	@rm -f *.tex *.pdf *.ps *~ *.log
 	
 .PHONY: all clean
+
+
+
+
+
