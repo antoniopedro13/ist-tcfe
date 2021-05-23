@@ -91,6 +91,9 @@ echo "V Gain=$&gain"
 echo "Bandwidth=$&bandwidth"
 echo "Lower Cut Off Freq= $&Cut_Out_Freq"
 
+*total_r = (Rin+R1+R2+Rc+Re+Rout+RL)/1000
+*total_c = (Ci+Cb+Cout)*1000000
+* total_t = 2*0.1
 
 let cost = 1225.6
 let merit = quality/cost
