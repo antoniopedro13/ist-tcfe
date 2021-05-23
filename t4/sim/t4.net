@@ -9,38 +9,40 @@
 
 .include ../mat/description.cir
 
+
+
+
 .op
 .end
 
 .control
 
-
 print all
-
 
 op
 
 
+
 echo "NPN_TAB"
 let Vce=v(coll)-v(emit)
-echo "Vce = $&Vce V"
+echo "Vce = $&Vce"
 let Vbe=v(base)-v(emit)
-echo "Vbe = $&Vbe V"
+echo "Vbe = $&Vbe"
 if (Vce>Vbe)
 echo "Correct F.A.R"
 else
 echo "Wrong F.A.R"
 endif
 
-
 echo "NPN_END"
+
 
 
 echo "PNP_TAB"
 let Vec=v(emit2)
-echo "Vec = $&Vec V"
+echo "Vec = $&Vec"
 let Veb=v(emit2)-v(coll)
-echo "Veb = $&Veb V"
+echo "Veb = $&Veb"
 if (Vec>Veb)
 echo "Correct F.A.R"
 else
@@ -59,56 +61,71 @@ ac dec 10 10 100MEG
 *plot vdb(coll)
 *plot vp(coll)
 *plot vdb(in)
-hardcopy vo1f.ps {vdb(coll)}
-echo vo1f_FIG 
+hardcopy vo1f.ps vdb(coll) 
 
 *plot vdb(out)
 *plot vp(out)
-hardcopy vo2f.ps {vdb(out)}
-echo vo2f_FIG 
+hardcopy vo2f.ps vdb(out)
 
 
 meas AC max MAX vdb(out) from=10 to=100MEG
 let range = max - 3
 
-
 meas AC lower WHEN vdb(out) = range RISE =1
 meas AC upper WHEN vdb(out) = range CROSS=LAST
 
-
 let bandwidth = upper-lower
 let gain = max
-let CutOutFreq1= lower
-let CutOutFreq2= upper
-let quality = bandwidth*gain/CutOutFreq1
+let Cut_Out_Freq= lower
+let High_Freq = upper
+let quality = bandwidth*gain/Cut_Out_Freq
+
+
 
 
 echo "Zin_TAB"
-let Zrin= Re(v(in2)[40]/i(Vin)[40])
-let Zimin= Im(v(in2)[40]/i(Vin)[40])
-echo "Zin = $&Zrin + $&Zimin j"
+let Zr_in= Re(v(in2)[40]/i(Vin)[40])
+let Zim_in= Im(v(in2)[40]/i(Vin)[40])
+echo "Zin = $&Zr_in + $&Zim_in j"
 echo "Zin_END"
 
 
+
 echo "results_TAB"
-echo "VGain = $&gain"
-echo "Bandwidth = $&bandwidth Hz"
-echo "LowerCutoffFreq = $&CutOutFreq1 Hz"
-echo "HigherCutoffFreq = $&CutOutFreq2 Hz"
+echo "V Gain=$&gain"
+echo "Bandwidth=$&bandwidth"
+echo "Lower Cut Off Freq= $&Cut_Out_Freq"
+echo "Higher Cut Off Freq= $&High_Freq"
 echo "results_END"
+
+
 
 *total_r = (Rin+R1+R2+Rc+Re+Rout+RL)/1000
 *total_c = (Ci+Cb+Cout)*1000000
 * total_t = 2*0.1
 
+
 let cost = 2198.943
 let merit = quality/cost
 
 
+
+echo "cost1_TAB"
+echo "Cost = $&cost"
+echo "merit = $&merit"
+echo "cost1_END"
+
+
+
 echo "cost_TAB"
+echo "V Gain=$&gain"
+echo "Low Cut Off Freq= $&Cut_Out_Freq"
+echo "High Cut Off Freq= $&High_Freq"
+echo "Bandwidth=$&bandwidth"
 echo "Cost = $&cost"
 echo "merit = $&merit"
 echo "cost_END"
+
 
 
 .endc 

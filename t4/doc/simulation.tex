@@ -68,6 +68,8 @@
 \par Finally, the effect of $R_C$ on the circuit gain is important to be studied. As the gain is proportional to the value of $R_C$, the higher $R_C$ is, the higher the gain will be and thus the merit. 
 
 \par All of the effects mentioned above can be seen through the graphics below, where it is possible to see the bandwidth, the gain and the lower and higher cutoff frequencies.
+\newpage
+
 
 \begin{figure}[ht]
 \centering
@@ -85,7 +87,7 @@
 \end{subfigure}
 \end{figure}
 
-
+\subsection{Input and Output Impedances}
 \par Next, the input and output impedances were calculated as seen on the tables below,
 
 \begin{table}[h]
@@ -111,6 +113,7 @@
 
 \par As we can see, the input impedance is higher than the outup impedance. This plays well to maximise the gain as the voltage in node in2 needs to be as close to Vin as possible, reducing the losses. To do that, as we can see in the voltage divider formulae, it's necessary to increase the resistance value. The opposite logic is used to the output impedance. Again, considering the voltage divider formulae, the output impedance must be as small as possible to guarantee the maximum output voltage and gain. Even though the output impedance should be lower than the $8\Omega$ to maximise the output voltage, because of the different parameters in the merit formula, our otimization made the value higher than the optimal value if it was the only one. 
 
+\subsection {Cost and Merit}
 \par Finally the cost and merit of the circuit described and seen in the images before  is calculated in ngspice. The results are shown on the table as it follows.
 
 \begin{table}[ht]
