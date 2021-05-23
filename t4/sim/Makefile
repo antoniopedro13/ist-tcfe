@@ -20,6 +20,6 @@ ngspice2.log: t4_o.net
 	ngspice -b $< -o $@
 	
 clean:
-	@rm -f ngspice.log *.tex *.pdf *.ps *~
+	@rm -f *.tex *.pdf *.ps *~ *.log
 	
 .PHONY: all clean

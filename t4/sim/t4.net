@@ -21,7 +21,7 @@ print all
 op
 
 
-echo "NPN_TABLE"
+echo "NPN_TAB"
 let Vce=v(coll)-v(emit)
 echo "Vce = $&Vce"
 let Vbe=v(base)-v(emit)
@@ -36,7 +36,7 @@ endif
 echo "NPN_END"
 
 
-echo "PNP_TABLE"
+echo "PNP_TAB"
 let Vec=v(emit2)
 echo "Vec = $&Vec"
 let Veb=v(emit2)-v(coll)
@@ -49,8 +49,9 @@ endif
 echo "PNP_END"
 
 
-echo  "op_TABLE"
+echo  "op_TAB"
 print all
+echo  "op_END"
 
 
 
@@ -86,10 +87,11 @@ echo "Zin = $&Zr_in + $&Zim_in j"
 echo "Zin_END"
 
 
-echo "results_TABLE"
-echo "V Gain=$&gain"
-echo "Bandwidth=$&bandwidth"
-echo "Lower Cut Off Freq= $&Cut_Out_Freq"
+echo "results_TAB"
+echo "VGain = $&gain"
+echo "Bandwidth = $&bandwidth"
+echo "Lower Cutoff Freq = $&Cut_Out_Freq"
+echo "results_END"
 
 *total_r = (Rin+R1+R2+Rc+Re+Rout+RL)/1000
 *total_c = (Ci+Cb+Cout)*1000000
@@ -99,9 +101,10 @@ let cost = 1225.6
 let merit = quality/cost
 
 
-echo "cost_TABLE"
+echo "cost_TAB"
 echo "Cost = $&cost"
 echo "merit = $&merit"
+echo "cost_END"
 
 
 .endc 
