@@ -1,12 +1,11 @@
 \section{Comparison}
 \label{section:comparison}
 
-
-\par Now a comparison between the theoretical analysis and the experimental analysis results is done and the results discussed conserning its accuracy and discrepancy. For the theoretical analysis as seen in the previous section an operating point analysis is mada in order to calculate the needed values.
+\par Now a comparison between the theoretical analysis and the experimental analysis results is done and the results discussed conserning its accuracy and discrepancy. For the theoretical analysis as seen in the previous section an operating point analysis is made in order to calculate the needed values.
  
- \par Conserning the passband frequency, we were able to obtain it using the function measure of ngspice. In the theoretical analysis it was calculated using the high and low pass band frequencies. Because of this the values are going to differ as we can see below.
+ \par Concerning the central frequency, we were able to obtain it using the function measure of ngspice. In the theoretical analysis it was calculated using the high and low cut off frequencies. Because of this the values are going to differ as we can see below.
 
- \begin{table}[h]
+ \begin{table}[H]
 \parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
@@ -20,30 +19,30 @@
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value} \\ \hline
-    \input{../mat/wo_freq_gain_TAB}
+    \input{../mat/comparacao_TAB}
   \end{tabular}
   \caption{Central frequency [Hz] and respective gain [dB]. (Octave)}}
 \end{table}
 
 \par Also the input and output impedances were calculated in both analysis are now compared below in the tables shown.
 
-\begin{table}[ht]
+\begin{table}[H]
 \parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Calculus} & {\bf Value [Ohm]} \\ \hline
-    \input{../sim/Zin_tab}
+    \input{../sim/comp_tab}
   \end{tabular}
-  \caption{Cirtcuit impedances. Variables are expressed in Ohm.(Ngspice)}} 
+  \caption{Circuit impedances. Variables are expressed in Ohm.(Ngspice)}} 
 \parbox{.45\linewidth}{
  \centering
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value [Ohm]} \\ \hline
-    \input{../mat/impedances_TAB}
+    \input{../mat/impedancias_TAB}
   \end{tabular}
-  \caption{Cirtcuit impedances. Variables are expressed in Ohm.(Octave)}}
+  \caption{Circuit impedances. Variables are expressed in Ohm.(Octave)}}
 \end{table}
 
 \par As we can see the values are close and the differences that exist may be explained because of the approximations done in the amplifier model, as no IOS and VOS current and voltage were considered which means that only the ideal model of the transistor was considered. These sources are put in place as the resistance in the circuits' cables are bigger than zero which means that the current on the inputs of the amplifier isn't going to be null as we considered. Also the OP-Amp model used in the theoretical analysis consists of many simplifications which explain the differences shown above.

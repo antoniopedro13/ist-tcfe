@@ -10,8 +10,6 @@ all: 1 2
 	ps2pdf vo2f.ps vo2f.pdf
 	
 	
-	
-	
 ngspice-1.log: ../sim/t5.net
 	ngspice -b $< -o $@
 		

@@ -1,17 +1,16 @@
 \section{Introduction}
 \label{sec:introduction}
 
-\par The goal of this laboratory assignment was to build a BandPass Filter (BPF) with the following specifications: central frequency at 1MHz and gain at central frequency at 40dB, using an Operational Amplifier. In our case, we chose to use the non-inverting amplifier, as the objetive was only to amplify the sginal without inverting it. In order to optimize the amplifier, both the theoretical and simulation analysis were done. The architecture of the given circuit can be seen in the following picture.
+\par The goal of this laboratory assignment was to build a BandPass Filter (BPF) with the following specifications: central frequency at 1MHz and gain at central frequency at 40dB, using an Operational Amplifier. In our case, we chose to use the non-inverting amplifier, as the objetive was only to amplify the signal without inverting it. In order to optimize the amplifier, both the theoretical and simulation analysis were done. The architecture of the given circuit can be seen in the following picture.
 
 \begin{figure}[H] \centering
-	\includegraphics[width=1\linewidth]{lab4.pdf}
-	\caption{Audio amplifier - given circuit}
+	\includegraphics[width=1\linewidth]{esquema.pdf}
+	\caption{Band-Pass Filter}
 	\label{fig:1}
-	
 \end{figure}
 
-\par As seen in the picture above, in this cirucit there was no sources used as the objetive of this assessment was to only build a circuit capable of amplifying any kind of signal and not a specific one. As such, vin and vout represent the input of the signal and its amplification, respectively. Through ngspice,  we were capable of measuring the wanted gain in the passband, the central frequency and the input and output impedances at the central frequency. In octave, a simulation of the circuit was also done with the required simplifications of the circuit. Gain, input and output impedances and frequency response were also obtained and then compared to the previously calculated on ngspice.
+\par As seen in the picture above, in this circuit there were no sources used as the objetive of this assessment was to only build a circuit capable of amplifying any kind of signal and not a specific one. As such, $v_I$ and $v_o$ represent the input of the signal and its amplification, respectively. Through ngspice,  we were capable of measuring the wanted gain in the passband, the central frequency and the input and output impedances at the central frequency. In octave, a simulation of the circuit was also done with the required simplifications of the circuit. Gain, input and output impedances and frequency response were also obtained and then compared to the previously calculated on ngspice.
 
-\par As seen in classes, an Op-Amp is a transistor based amplifier which is characterised by its high gain, high input impedance and low output impedance. For this laboratory assessment the group was given a list of components allowed to use and so the components used were all of them from this list.
+\par As seen in classes, an OP-AMP is a transistor based amplifier which is characterised by its high gain, high input impedance and low output impedance. For this laboratory assessment the group was given a list of components allowed to use and so the components used were all from this list.
 
 \newpage

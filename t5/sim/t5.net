@@ -1,8 +1,6 @@
 .options savecurrents
 
 *-----------------------------------------------------------------------------
-
-
 *
 * To use a subcircuit, the name must begin with 'X'.  For example:
 * X1 1 2 3 4 5 uA741
@@ -66,12 +64,12 @@ R1 3 0 1k
 
 
 
-R3 2 4 100k
+R3 2 4 150k
 R4 2 0 1k
 
 
 R2 4 out 1k
-C2 out 0 220n
+C2 out 0 110n
 
 
 
@@ -109,10 +107,10 @@ meas AC Cfreq MAX_AT vdb(out) from=10 to=100MEG
 
 
 
-let cost = 13425.8
+let cost = 14286
 let cdevi=abs(1000-Cfreq)
-let gaindevi=abs(100-10^(maximo/20))
-let merit = 1/(cost*gaindevi*cdevi)
+let gaindevi=abs(40-maximo)
+let merit = 1/(cost*(gaindevi+cdevi +1e-6))
 
 
 
@@ -125,21 +123,27 @@ let Zim_in= Im(-v(in)[40]/i(Vin)[40])
 echo "Zin = $&Zr_in + $&Zim_in j"
 echo "Zin_END"
 
+echo "comp_TAB"
+let Zr_in= Re(-v(in)[40]/i(Vin)[40])
+let Zim_in= Im(-v(in)[40]/i(Vin)[40])
+echo "Zin = $&Zr_in + $&Zim_in j"
+echo "Zo = 0.20916 + -14.4657 j"
+echo "comp_END"
 
 
 
 echo "results_TAB"
-echo "Gain= $&maximo"
-echo "Central Frequency= $&Cfreq"
-echo "Gain deviation=$&gaindevi"
-echo "Central frequency deviation=$&cdevi"
+echo "Gain= $&maximo dB"
+echo "Central Frequency= $&Cfreq Hz"
+echo "Gain deviation=$&gaindevi dB"
+echo "Central frequency deviation=$&cdevi Hz"
 echo "results_END"
 
 
 
 echo "**************"
 echo "cost_TAB"
-echo "Cost = $&cost"
+echo "Cost = $&cost MU"
 echo "Merit = $&merit"
 echo "cost_END"
 echo "**************"
