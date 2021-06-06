@@ -79,6 +79,7 @@ printf ("R1 = %e \n", R1);
 printf ("R2 = %e \n", R2);
 printf ("R3 = %e \n", R3);
 printf ("R4 = %e \n", R4);
+printf ("componentes_END\n\n");
 printf ("C1 = %e \n", C1);
 printf ("C2 = %e \n", C2);
 printf ("componentes_END\n\n");

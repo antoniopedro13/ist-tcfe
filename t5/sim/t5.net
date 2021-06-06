@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 .options savecurrents
 
->>>>>>> d0b080297fc0b7e965087175cb535c02ef7a19c1
 *-----------------------------------------------------------------------------
 *
 * To use a subcircuit, the name must begin with 'X'.  For example:
@@ -54,19 +51,6 @@
 
 .options savecurrents
 
-<<<<<<< HEAD
-Vcc vcc 0 5.0
-Vee vee 0 -5.0
-Vin in 0 0 ac 1.0 sin(0 10m 1k)
-
-X1 0 inv_in vcc vee out uA741
-
-R1 in inv_in 1000
-R2 inv_in out 10000
-
-* load
-RL out 0 8
-=======
 Vcc vcc 0 10.0
 Vee vee 0 -10.0
 Vin in 0 0 ac 1.0 sin(0 10m 1k)
@@ -88,36 +72,12 @@ R2 4 out 1k
 C2 out 0 220n
 
 
->>>>>>> d0b080297fc0b7e965087175cb535c02ef7a19c1
 
 .op
 .end
 
 .control
 
-<<<<<<< HEAD
-print all
-
-* time analysis
-tran 1e-5 1e-2
-plot v(out)
-hardcopy vo1.ps vdb(out)
-
-
-* frequency analysis
-ac dec 10 10 100MEG
-plot vdb(out)
-plot vp(out)
-hardcopy vo1f.ps vdb(out)
-
-*input impedance in kohm
-print v(in)[40]/R1[i]/1000
-
-*need a different setup to measure output impedance
-
-.endc 
-
-=======
 
 
 
@@ -185,4 +145,3 @@ echo "**************"
 quit
 .endc 
 .end
->>>>>>> d0b080297fc0b7e965087175cb535c02ef7a19c1

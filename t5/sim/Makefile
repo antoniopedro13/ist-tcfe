@@ -10,11 +10,7 @@ all: 1 2
 	ps2pdf vo2f.ps vo2f.pdf
 	
 	
-<<<<<<< HEAD
 ngspice-1.log: ../sim/t5.net
-=======
-ngspice-1.log: ../sim/t4.net
->>>>>>> d0b080297fc0b7e965087175cb535c02ef7a19c1
 	ngspice -b $< -o $@
 		
 		
@@ -26,11 +22,7 @@ ngspice-1.log: ../sim/t4.net
 	
 	
 		
-<<<<<<< HEAD
 ngspice-2.log: ../sim/t5_o.net
-=======
-ngspice-2.log: ../sim/t4_o.net
->>>>>>> d0b080297fc0b7e965087175cb535c02ef7a19c1
 	ngspice -b $< -o $@	
 		
 					
