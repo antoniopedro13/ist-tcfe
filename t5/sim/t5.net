@@ -1,6 +1,8 @@
 .options savecurrents
 
 *-----------------------------------------------------------------------------
+
+
 *
 * To use a subcircuit, the name must begin with 'X'.  For example:
 * X1 1 2 3 4 5 uA741
